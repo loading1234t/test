@@ -1,0 +1,32 @@
+<!-- web/index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Магазин</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🛍️ Товары</h1>
+  <div id="products" class="grid"></div>
+
+  <script>
+    fetch("../products.json")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("products");
+        data.reverse().forEach(item => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = `
+            <img src="${item.photo_url}" alt="Товар" />
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <b>${item.price} $</b>
+          `;
+          container.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>
