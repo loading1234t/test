@@ -24,25 +24,28 @@
             --text-light: #f8fafc;
             --text-gray: #cbd5e1;
             --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --black: #000000;
+            --dark-gray: #1a1a1a;
+            --accent-orange: #ff3e00;
         }
 
         body {
-            background-color: var(--dark-bg);
+            background-color: var(--black);
             color: var(--text-light);
             overflow-x: hidden;
         }
 
-        /* 🔥 Улучшенный хедер */
+        /* 🔥 Улучшенный хедер с черным цветом */
         header {
-            background: rgba(30, 41, 59, 0.95);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 2rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid var(--primary-blue);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid var(--accent-orange);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
         }
 
         .header-container {
@@ -56,7 +59,7 @@
         .logo {
             font-size: 2.2rem;
             font-weight: bold;
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #ff6b00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -78,7 +81,7 @@
         }
 
         nav a:hover {
-            color: var(--primary-blue);
+            color: var(--accent-orange);
         }
 
         nav a::after {
@@ -88,7 +91,7 @@
             left: 0;
             width: 0;
             height: 3px;
-            background: var(--gradient);
+            background: var(--accent-orange);
             transition: width 0.3s ease;
             border-radius: 2px;
         }
@@ -99,8 +102,8 @@
 
         .admin-btn {
             background: transparent;
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue);
+            border: 2px solid var(--accent-orange);
+            color: var(--accent-orange);
             padding: 0.7rem 1.5rem;
             border-radius: 8px;
             cursor: pointer;
@@ -110,20 +113,20 @@
         }
 
         .admin-btn:hover {
-            background: var(--primary-blue);
+            background: var(--accent-orange);
             color: var(--text-light);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 62, 0, 0.3);
         }
 
-        /* 🎯 Улучшенный герой-баннер */
+        /* 🎯 Улучшенный герой-баннер с черным фоном */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
             padding: 0 2rem;
             margin-top: 80px;
             position: relative;
@@ -137,14 +140,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%232563eb" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ff3e00" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
             background-size: cover;
         }
 
         .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #ff6b00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -160,7 +163,7 @@
         }
 
         .cta-button {
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #ff6b00 100%);
             color: var(--text-light);
             border: none;
             padding: 1.2rem 3rem;
@@ -169,15 +172,15 @@
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 62, 0, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 15px 40px rgba(255, 62, 0, 0.4);
         }
 
-        /* 🎮 Улучшенные категории */
+        /* 🎮 Улучшенные категории с черным фоном */
         .categories {
             padding: 3rem 2rem;
             max-width: 1400px;
@@ -192,7 +195,7 @@
         }
 
         .category-card {
-            background: var(--card-bg);
+            background: var(--dark-gray);
             border-radius: 15px;
             padding: 2rem;
             text-align: center;
@@ -210,15 +213,15 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--gradient);
+            background: var(--accent-orange);
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
 
         .category-card:hover {
             transform: translateY(-5px);
-            border-color: var(--primary-blue);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent-orange);
+            box-shadow: 0 15px 40px rgba(255, 62, 0, 0.2);
         }
 
         .category-card:hover::before {
@@ -228,7 +231,7 @@
         .category-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #ff6b00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -268,7 +271,7 @@
             transform: translateX(-50%);
             width: 150px;
             height: 4px;
-            background: var(--gradient);
+            background: var(--accent-orange);
             border-radius: 2px;
         }
 
@@ -280,10 +283,10 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            background: var(--card-bg);
+            background: var(--dark-gray);
             padding: 2rem;
             border-radius: 15px;
-            border: 1px solid #334155;
+            border: 1px solid #333333;
         }
 
         .filter-group {
@@ -301,8 +304,8 @@
         }
 
         .filter-select {
-            background: var(--dark-bg);
-            border: 2px solid #334155;
+            background: var(--black);
+            border: 2px solid #333333;
             border-radius: 10px;
             padding: 0.8rem 1rem;
             color: var(--text-light);
@@ -313,8 +316,8 @@
 
         .filter-select:focus {
             outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 0 3px rgba(255, 62, 0, 0.1);
         }
 
         .products-count {
@@ -325,7 +328,7 @@
             font-weight: 600;
         }
 
-        /* 🎨 Улучшенные карточки товаров */
+        /* 🎨 Улучшенные карточки товаров с черным фоном */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -333,26 +336,26 @@
         }
 
         .product-card {
-            background: var(--card-bg);
+            background: var(--dark-gray);
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.4s ease;
-            border: 2px solid #334155;
+            border: 2px solid #333333;
             cursor: pointer;
             position: relative;
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            border-color: var(--primary-blue);
+            box-shadow: 0 20px 50px rgba(255, 62, 0, 0.2);
+            border-color: var(--accent-orange);
         }
 
         .product-badge {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: var(--gradient);
+            background: var(--accent-orange);
             color: white;
             padding: 0.3rem 1rem;
             border-radius: 20px;
@@ -386,8 +389,8 @@
 
         .product-category {
             font-size: 0.9rem;
-            color: var(--primary-blue);
-            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent-orange);
+            background: rgba(255, 62, 0, 0.1);
             padding: 0.3rem 1rem;
             border-radius: 15px;
             display: inline-block;
@@ -408,11 +411,12 @@
 
         .product-price {
             font-size: 1.5rem;
-            color: var(--accent-teal);
+            color: var(--accent-orange);
             font-weight: bold;
             margin-bottom: 1rem;
         }
 
+        /* УБРАНЫ ЗВЕЗДЫ РЕЙТИНГА - оставлена только числовая оценка */
         .product-rating {
             display: flex;
             align-items: center;
@@ -420,19 +424,19 @@
             margin-bottom: 1rem;
         }
 
-        .stars {
-            color: #fbbf24;
-        }
-
         .rating-value {
-            color: var(--text-gray);
+            background: var(--accent-orange);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
             font-size: 0.9rem;
+            font-weight: bold;
         }
 
         footer {
-            background: var(--card-bg);
+            background: var(--dark-gray);
             padding: 4rem 2rem;
-            border-top: 2px solid var(--primary-blue);
+            border-top: 2px solid var(--accent-orange);
             margin-top: 4rem;
         }
 
@@ -445,7 +449,7 @@
         }
 
         .footer-section h3 {
-            color: var(--primary-blue);
+            color: var(--accent-orange);
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
         }
@@ -472,7 +476,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(5px);
             z-index: 2000;
         }
@@ -482,12 +486,12 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: var(--card-bg);
+            background: var(--dark-gray);
             border-radius: 20px;
             padding: 2.5rem;
             max-width: 500px;
             width: 90%;
-            border: 2px solid var(--primary-blue);
+            border: 2px solid var(--accent-orange);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
             max-height: 90vh;
             overflow-y: auto;
@@ -513,13 +517,13 @@
         }
 
         .close-modal:hover {
-            color: var(--primary-blue);
-            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent-orange);
+            background: rgba(255, 62, 0, 0.1);
         }
 
         .modal h2 {
             margin-bottom: 2rem;
-            color: var(--primary-blue);
+            color: var(--accent-orange);
             text-align: center;
             font-size: 2.2rem;
         }
@@ -539,8 +543,8 @@
         .form-group input, .form-group textarea, .form-group select {
             width: 100%;
             padding: 1rem;
-            background: var(--dark-bg);
-            border: 2px solid #334155;
+            background: var(--black);
+            border: 2px solid #333333;
             border-radius: 10px;
             color: var(--text-light);
             transition: all 0.3s ease;
@@ -555,14 +559,14 @@
 
         .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
             outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 0 3px rgba(255, 62, 0, 0.1);
         }
 
         .submit-btn {
             width: 100%;
             padding: 1.2rem;
-            background: var(--gradient);
+            background: var(--accent-orange);
             border: none;
             border-radius: 10px;
             color: var(--text-light);
@@ -575,22 +579,22 @@
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 25px rgba(255, 62, 0, 0.3);
         }
 
         .admin-panel {
             display: none;
-            background: var(--card-bg);
+            background: var(--dark-gray);
             padding: 3rem;
             margin: 2rem auto;
             max-width: 1400px;
             border-radius: 20px;
-            border: 2px solid var(--primary-blue);
+            border: 2px solid var(--accent-orange);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         .admin-panel h2 {
-            color: var(--primary-blue);
+            color: var(--accent-orange);
             margin-bottom: 2rem;
             text-align: center;
             font-size: 2.5rem;
@@ -605,8 +609,8 @@
 
         .admin-btn-action {
             background: transparent;
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue);
+            border: 2px solid var(--accent-orange);
+            color: var(--accent-orange);
             padding: 1.5rem;
             border-radius: 15px;
             cursor: pointer;
@@ -616,10 +620,10 @@
         }
 
         .admin-btn-action:hover {
-            background: var(--primary-blue);
+            background: var(--accent-orange);
             color: var(--text-light);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 25px rgba(255, 62, 0, 0.3);
         }
 
         .admin-section {
@@ -628,7 +632,7 @@
             padding: 2rem;
             background: rgba(0, 0, 0, 0.3);
             border-radius: 15px;
-            border: 1px solid #334155;
+            border: 1px solid #333333;
         }
 
         .admin-section.active {
@@ -703,7 +707,7 @@
         }
 
         .nav-btn:hover {
-            background: var(--primary-blue);
+            background: var(--accent-orange);
             transform: scale(1.1);
         }
 
@@ -725,13 +729,13 @@
         }
 
         .thumbnail:hover {
-            border-color: var(--primary-blue);
+            border-color: var(--accent-orange);
             transform: scale(1.1);
         }
 
         .thumbnail.active {
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 2px var(--primary-blue);
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 0 2px var(--accent-orange);
         }
 
         .photo-count {
@@ -739,7 +743,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 1rem;
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(255, 62, 0, 0.1);
             border-radius: 8px;
             color: var(--text-light);
             margin-top: 1rem;
@@ -747,7 +751,7 @@
         }
 
         .photo-count i {
-            color: var(--primary-blue);
+            color: var(--accent-orange);
         }
 
         .product-description-full {
@@ -776,7 +780,7 @@
 
         .feature-list li::before {
             content: '✓';
-            color: var(--accent-teal);
+            color: var(--accent-orange);
             font-weight: bold;
         }
 
@@ -827,7 +831,7 @@
         }
 
         .add-image-btn {
-            background: var(--accent-teal);
+            background: var(--accent-orange);
             color: white;
             border: none;
             border-radius: 8px;
@@ -842,7 +846,7 @@
         }
 
         .add-image-btn:hover {
-            background: #0f766e;
+            background: #e03500;
             transform: translateY(-2px);
         }
 
@@ -870,7 +874,7 @@
             height: 60px;
             object-fit: cover;
             border-radius: 5px;
-            border: 2px solid var(--primary-blue);
+            border: 2px solid var(--accent-orange);
         }
 
         /* ✨ Анимации */
@@ -969,13 +973,13 @@
             align-items: center;
             gap: 1rem;
             padding: 1rem;
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(255, 62, 0, 0.1);
             border-radius: 10px;
-            border: 1px solid #3b82f6;
+            border: 1px solid var(--accent-orange);
         }
 
         .info-item i {
-            color: #3b82f6;
+            color: var(--accent-orange);
             font-size: 1.2rem;
             width: 24px;
         }
@@ -995,8 +999,8 @@
         }
 
         .category-tab {
-            background: var(--card-bg);
-            border: 2px solid #334155;
+            background: var(--dark-gray);
+            border: 2px solid #333333;
             color: var(--text-light);
             padding: 0.8rem 1.5rem;
             border-radius: 10px;
@@ -1006,21 +1010,21 @@
         }
 
         .category-tab:hover {
-            border-color: var(--primary-blue);
+            border-color: var(--accent-orange);
             transform: translateY(-2px);
         }
 
         .category-tab.active {
-            background: var(--primary-blue);
-            border-color: var(--primary-blue);
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
         }
 
         .view-all-btn {
             display: block;
             margin: 2rem auto 0;
             background: transparent;
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue);
+            border: 2px solid var(--accent-orange);
+            color: var(--accent-orange);
             padding: 1rem 2rem;
             border-radius: 10px;
             cursor: pointer;
@@ -1030,7 +1034,7 @@
         }
 
         .view-all-btn:hover {
-            background: var(--primary-blue);
+            background: var(--accent-orange);
             color: var(--text-light);
         }
 
@@ -1045,18 +1049,18 @@
         .video-placeholder {
             width: 100%;
             height: 400px;
-            background: var(--dark-bg);
+            background: var(--black);
             border-radius: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border: 2px solid #334155;
+            border: 2px solid #333333;
         }
 
         .video-placeholder i {
             font-size: 4rem;
-            color: var(--primary-blue);
+            color: var(--accent-orange);
             margin-bottom: 1rem;
         }
 
@@ -1070,18 +1074,137 @@
         .youtube-link {
             display: inline-block;
             margin-top: 1rem;
-            color: var(--primary-blue);
+            color: var(--accent-orange);
             text-decoration: none;
             font-weight: 600;
             padding: 0.5rem 1rem;
-            border: 2px solid var(--primary-blue);
+            border: 2px solid var(--accent-orange);
             border-radius: 8px;
             transition: all 0.3s ease;
         }
 
         .youtube-link:hover {
-            background: var(--primary-blue);
+            background: var(--accent-orange);
             color: var(--text-light);
+        }
+
+        /* 🆕 НОВЫЕ СТИЛИ ДЛЯ ТОП ТОВАРОВ И КОММЕНТАРИЕВ */
+        
+        /* Секция топ товаров */
+        .top-products {
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .top-products-badge {
+            background: linear-gradient(135deg, #ff3e00, #ff6b00);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        /* Секция комментариев */
+        .comments-section {
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--dark-gray);
+            border-radius: 20px;
+            border: 2px solid #333333;
+        }
+
+        .comment-form {
+            margin-bottom: 2rem;
+        }
+
+        .comments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .comment {
+            background: var(--black);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: var(--accent-orange);
+        }
+
+        .comment-date {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .comment-text {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .delete-comment-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .delete-comment-btn:hover {
+            background: #dc2626;
+            transform: scale(1.05);
+        }
+
+        .no-comments {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-gray);
+            font-style: italic;
+        }
+
+        /* Админ панель для управления комментариями */
+        .comments-admin-section {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 1px solid #333333;
+        }
+
+        .comment-admin-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: var(--black);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .comment-admin-info {
+            flex: 1;
+        }
+
+        .comment-admin-text {
+            color: var(--text-light);
+            margin-top: 0.5rem;
         }
     </style>
 </head>
@@ -1095,6 +1218,8 @@
                     <li><a href="#home">Главная</a></li>
                     <li><a href="#categories">Категории</a></li>
                     <li><a href="#products">Товары</a></li>
+                    <li><a href="#top-products">Топ товары</a></li>
+                    <li><a href="#comments">Комментарии</a></li>
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>
@@ -1123,25 +1248,32 @@
                     <i class="fas fa-mouse"></i>
                 </div>
                 <div class="category-name">Игровые мыши</div>
-                <div class="category-count" id="mouseCount">0 товаров</div>
+                <div class="category-count" id="mouseCount">35 товаров</div>
             </div>
             <div class="category-card" data-category="клавиатура">
                 <div class="category-icon">
                     <i class="fas fa-keyboard"></i>
                 </div>
                 <div class="category-name">Клавиатуры</div>
-                <div class="category-count" id="keyboardCount">0 товаров</div>
+                <div class="category-count" id="keyboardCount">18 товаров</div>
             </div>
             <div class="category-card" data-category="наушники">
                 <div class="category-icon">
                     <i class="fas fa-headphones"></i>
                 </div>
                 <div class="category-name">Наушники</div>
-                <div class="category-count" id="headphonesCount">0 товаров</div>
+                <div class="category-count" id="headphonesCount">18 товаров</div>
+            </div>
+            <div class="category-card" data-category="монитор">
+                <div class="category-icon">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <div class="category-name">Мониторы</div>
+                <div class="category-count" id="monitorCount">3 товара</div>
             </div>
             <div class="category-card" data-category="сетап">
                 <div class="category-icon">
-                    <i class="fas fa-desktop"></i>
+                    <i class="fas fa-gamepad"></i>
                 </div>
                 <div class="category-name">Сетапы</div>
                 <div class="category-count" id="setupCount">0 товаров</div>
@@ -1175,9 +1307,9 @@
                     <option value="мышь">Игровые мыши</option>
                     <option value="клавиатура">Клавиатуры</option>
                     <option value="наушники">Наушники</option>
+                    <option value="монитор">Мониторы</option>
                     <option value="сетап">Сетапы</option>
                     <option value="кейкапы">Кейкапы</option>
-                    <option value="монитор">Мониторы</option>
                     <option value="кресло">Кресла</option>
                     <option value="коврик">Коврики</option>
                 </select>
@@ -1209,6 +1341,41 @@
         <button class="view-all-btn" id="viewAllBtn" style="display: none;">
             <i class="fas fa-list"></i> Показать все товары
         </button>
+    </section>
+
+    <!-- 🆕 Секция топ товаров -->
+    <section class="top-products" id="top-products">
+        <h2 class="section-title">Топ товары</h2>
+        <div class="products-grid" id="topProductsGrid">
+            <!-- Топ товары будут загружаться здесь -->
+        </div>
+    </section>
+
+    <!-- 🆕 Секция комментариев -->
+    <section class="comments-section" id="comments">
+        <h2 class="section-title">Комментарии</h2>
+        
+        <!-- Форма добавления комментария -->
+        <div class="comment-form">
+            <form id="addCommentForm">
+                <div class="form-group">
+                    <label for="commentAuthor">Ваше имя</label>
+                    <input type="text" id="commentAuthor" required placeholder="Введите ваше имя">
+                </div>
+                <div class="form-group">
+                    <label for="commentText">Ваш комментарий</label>
+                    <textarea id="commentText" required placeholder="Оставьте ваш отзыв о товарах..." rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Оставить комментарий
+                </button>
+            </form>
+        </div>
+        
+        <!-- Список комментариев -->
+        <div class="comments-list" id="commentsList">
+            <!-- Комментарии будут загружаться здесь -->
+        </div>
     </section>
 
     <!-- 📞 Футер -->
@@ -1265,6 +1432,12 @@
             <button class="admin-btn-action" id="manageProductsBtn">
                 <i class="fas fa-edit"></i> Управление товарами
             </button>
+            <button class="admin-btn-action" id="manageTopProductsBtn">
+                <i class="fas fa-star"></i> Управление топ товарами
+            </button>
+            <button class="admin-btn-action" id="manageCommentsBtn">
+                <i class="fas fa-comments"></i> Управление комментариями
+            </button>
             <button class="admin-btn-action" id="exportDataBtn">
                 <i class="fas fa-download"></i> Экспорт JSON
             </button>
@@ -1288,9 +1461,9 @@
                         <option value="мышь">Игровая мышь</option>
                         <option value="клавиатура">Клавиатура</option>
                         <option value="наушники">Наушники</option>
+                        <option value="монитор">Монитор</option>
                         <option value="сетап">Сетап</option>
                         <option value="кейкапы">Кейкапы</option>
-                        <option value="монитор">Монитор</option>
                         <option value="кресло">Кресло</option>
                         <option value="коврик">Коврик</option>
                     </select>
@@ -1330,6 +1503,13 @@
                         Можно ввести ID видео или полную ссылку на YouTube
                     </small>
                 </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="isTopProduct"> Добавить в топ товары
+                    </label>
+                </div>
+
                 <button type="submit" class="submit-btn">
                     <i class="fas fa-plus"></i> Добавить товар
                 </button>
@@ -1341,6 +1521,22 @@
             <h3><i class="fas fa-edit"></i> Управление товарами</h3>
             <div id="adminProductsList">
                 <!-- 📦 Список товаров для управления -->
+            </div>
+        </div>
+
+        <!-- ⭐ Секция управления топ товарами -->
+        <div class="admin-section" id="manageTopProductsSection">
+            <h3><i class="fas fa-star"></i> Управление топ товарами</h3>
+            <div id="adminTopProductsList">
+                <!-- Топ товары для управления -->
+            </div>
+        </div>
+
+        <!-- 💬 Секция управления комментариями -->
+        <div class="admin-section" id="manageCommentsSection">
+            <h3><i class="fas fa-comments"></i> Управление комментариями</h3>
+            <div id="adminCommentsList">
+                <!-- Комментарии для управления -->
             </div>
         </div>
     </div>
@@ -1378,6 +1574,8 @@
         const database = getDatabase(app);
 
         let products = [];
+        let topProducts = [];
+        let comments = [];
         let filteredProducts = [];
         let currentImageIndex = 0;
         let currentCategory = 'all';
@@ -1413,36 +1611,12 @@
             return null;
         }
 
-        // 🎬 Функция для проверки доступности YouTube видео
-        function checkYouTubeVideo(videoId) {
-            return new Promise((resolve) => {
-                const iframe = document.createElement('iframe');
-                iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1`;
-                iframe.style.display = 'none';
-                
-                iframe.onload = () => {
-                    // Если iframe загрузился, видео вероятно доступно
-                    setTimeout(() => {
-                        document.body.removeChild(iframe);
-                        resolve(true);
-                    }, 1000);
-                };
-                
-                iframe.onerror = () => {
-                    document.body.removeChild(iframe);
-                    resolve(false);
-                };
-                
-                document.body.appendChild(iframe);
-            });
-        }
-
-        // 📥 Загрузка товаров из Firebase
-        function loadProducts() {
-            console.log('🔄 Загружаем товары из Firebase...');
+        // 📥 Загрузка данных из Firebase
+        function loadData() {
+            console.log('🔄 Загружаем данные из Firebase...');
             
+            // Загрузка товаров
             const productsRef = ref(database, 'products');
-            
             onValue(productsRef, (snapshot) => {
                 const data = snapshot.val();
                 if (data) {
@@ -1450,19 +1624,45 @@
                     console.log('✅ Товары загружены:', products.length);
                     updateCategoryCounts();
                     updateCategoryTabs();
+                    loadTopProducts();
                 } else {
-                    products = [];
+                    products = getDefaultProducts();
                     console.log('📝 База пустая, начинаем с нуля');
                     updateCategoryCounts();
                     updateCategoryTabs();
+                    loadTopProducts();
                 }
                 applyFilters();
-            }, (error) => {
-                console.error('❌ Ошибка загрузки:', error);
-                products = getDefaultProducts();
-                updateCategoryCounts();
-                updateCategoryTabs();
-                applyFilters();
+            });
+
+            // Загрузка топ товаров
+            const topProductsRef = ref(database, 'topProducts');
+            onValue(topProductsRef, (snapshot) => {
+                const data = snapshot.val();
+                if (data) {
+                    topProducts = Object.values(data);
+                    console.log('✅ Топ товары загружены:', topProducts.length);
+                    renderTopProducts();
+                } else {
+                    topProducts = [];
+                    console.log('📝 Нет топ товаров');
+                    renderTopProducts();
+                }
+            });
+
+            // Загрузка комментариев
+            const commentsRef = ref(database, 'comments');
+            onValue(commentsRef, (snapshot) => {
+                const data = snapshot.val();
+                if (data) {
+                    comments = Object.values(data);
+                    console.log('✅ Комментарии загружены:', comments.length);
+                    renderComments();
+                } else {
+                    comments = [];
+                    console.log('📝 Нет комментариев');
+                    renderComments();
+                }
             });
         }
 
@@ -1471,12 +1671,14 @@
             const mouseCount = products.filter(p => p.category === 'мышь').length;
             const keyboardCount = products.filter(p => p.category === 'клавиатура').length;
             const headphonesCount = products.filter(p => p.category === 'наушники').length;
+            const monitorCount = products.filter(p => p.category === 'монитор').length;
             const setupCount = products.filter(p => p.category === 'сетап').length;
             const keycapsCount = products.filter(p => p.category === 'кейкапы').length;
 
             document.getElementById('mouseCount').textContent = `${mouseCount} товаров`;
             document.getElementById('keyboardCount').textContent = `${keyboardCount} товаров`;
             document.getElementById('headphonesCount').textContent = `${headphonesCount} товаров`;
+            document.getElementById('monitorCount').textContent = `${monitorCount} товаров`;
             document.getElementById('setupCount').textContent = `${setupCount} товаров`;
             document.getElementById('keycapsCount').textContent = `${keycapsCount} товаров`;
         }
@@ -1527,12 +1729,12 @@
             });
         }
 
-        // 💾 Сохранение товара в Firebase
-        async function saveProduct(product) {
+        // 💾 Сохранение данных в Firebase
+        async function saveToFirebase(path, data) {
             try {
-                const productRef = ref(database, 'products/' + product.id);
-                await set(productRef, product);
-                console.log('✅ Товар сохранен в Firebase');
+                const refPath = ref(database, path);
+                await set(refPath, data);
+                console.log('✅ Данные сохранены в Firebase:', path);
                 return true;
             } catch (error) {
                 console.error('❌ Ошибка сохранения:', error);
@@ -1540,12 +1742,12 @@
             }
         }
 
-        // 🗑️ Удаление товара из Firebase
-        async function deleteProductFromFirebase(productId) {
+        // 🗑️ Удаление данных из Firebase
+        async function deleteFromFirebase(path) {
             try {
-                const productRef = ref(database, 'products/' + productId);
-                await remove(productRef);
-                console.log('✅ Товар удален из Firebase');
+                const refPath = ref(database, path);
+                await remove(refPath);
+                console.log('✅ Данные удалены из Firebase:', path);
                 return true;
             } catch (error) {
                 console.error('❌ Ошибка удаления:', error);
@@ -1563,12 +1765,13 @@
                     price: "799,000 UZS",
                     images: [
                         "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                        "https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                        "https://images.unsplash.com/photo-1563297007-0686b7003af7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        "https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                     ],
-                    description: "Эргономичная игровая мышь с сенсором 20K DPI и 7 программируемыми кнопками. Идеальна для FPS игр. Оснащена оптическими переключателями для мгновенного отклика и долговечности. Подсветка Razer Chroma™ с 16.8 млн. цветов.",
-                    video: "j0Xz5ZKuZgU", // Заменяем на рабочее видео
-                    features: ["Сенсор 20K DPI", "7 программируемых кнопок", "Оптические переключатели", "Подсветка Razer Chroma™", "Скорость отклика 0.2 мс"]
+                    description: "Эргономичная игровая мышь с сенсором 20K DPI и 7 программируемыми кнопками. Идеальна для FPS игр.",
+                    video: "j0Xz5ZKuZgU",
+                    features: ["Сенсор 20K DPI", "7 программируемых кнопок", "Оптические переключатели", "Подсветка Razer Chroma™"],
+                    rating: 9.2,
+                    isTop: true
                 },
                 {
                     id: 2,
@@ -1576,43 +1779,216 @@
                     category: "клавиатура",
                     price: "1,299,000 UZS",
                     images: [
-                        "https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                        "https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        "https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                     ],
-                    description: "Компактная механическая клавиатура с переключателями Romer-G. Идеальна для киберспорта. Tenkeyless дизайн экономит место на столе. Противоскользящие ножки и кабель с оплеткой.",
+                    description: "Компактная механическая клавиатура с переключателями Romer-G. Идеальна для киберспорта.",
                     video: "",
-                    features: ["Переключатели Romer-G", "Tenkeyless дизайн", "RGB подсветка", "Противоскользящие ножки", "Кабель с оплеткой"]
+                    features: ["Переключатели Romer-G", "Tenkeyless дизайн", "RGB подсветка"],
+                    rating: 8.7,
+                    isTop: true
                 },
                 {
                     id: 3,
-                    name: "Игровой сетап Streamer Pro",
-                    category: "сетап",
-                    price: "5,999,000 UZS",
+                    name: "Игровой монитор ASUS ROG Swift",
+                    category: "монитор",
+                    price: "3,499,000 UZS",
                     images: [
-                        "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                        "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                     ],
-                    description: "Полный игровой сетап для стримеров и профессиональных геймеров. Включает мощный ПК, монитор, клавиатуру, мышь, наушники и кресло. Идеально сбалансирован для комфортной игры и стриминга.",
-                    video: "j0Xz5ZKuZgU",
-                    features: ["Мощный игровой ПК", "Игровой монитор 144 Гц", "Механическая клавиатура", "Игровая мышь", "Эргономичное кресло"]
+                    description: "27-дюймовый игровой монитор с частотой обновления 144 Гц и технологией G-Sync.",
+                    video: "",
+                    features: ["27 дюймов", "144 Гц", "G-Sync", "IPS матрица"],
+                    rating: 9.0,
+                    isTop: true
                 },
                 {
                     id: 4,
-                    name: "Кейкапы HyperX Double Shot PBT",
-                    category: "кейкапы",
-                    price: "299,000 UZS",
+                    name: "Игровые наушники HyperX Cloud II",
+                    category: "наушники",
+                    price: "899,000 UZS",
                     images: [
-                        "https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                        "https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                     ],
-                    description: "Качественные кейкапы из PBT пластика с двойным литьем. Не стираются со временем, устойчивы к истиранию. Подходят для большинства механических клавиатур. Доступны в различных цветовых схемах.",
+                    description: "Комфортные игровые наушники с виртуальным 7.1 surround sound и шумоподавлением.",
                     video: "",
-                    features: ["PBT пластик", "Двойное литье", "Устойчивость к истиранию", "Совместимость с большинством клавиатур", "Различные цветовые схемы"]
+                    features: ["7.1 surround sound", "Шумоподавление", "Съемный микрофон"],
+                    rating: 8.5
                 }
             ];
         }
 
-        // 🎯 Функции фильтрации и сортировки
+        // ⭐ Загрузка топ товаров
+        function loadTopProducts() {
+            // Топ товары - это товары с флагом isTop или высоким рейтингом
+            topProducts = products.filter(product => product.isTop || (product.rating && product.rating >= 8.5));
+            
+            // Сохраняем в Firebase для синхронизации
+            saveToFirebase('topProducts', topProducts);
+            
+            renderTopProducts();
+        }
+
+        // 🎨 Отрисовка топ товаров
+        function renderTopProducts() {
+            const grid = document.getElementById('topProductsGrid');
+            if (!grid) return;
+            
+            grid.innerHTML = '';
+            
+            if (topProducts.length === 0) {
+                grid.innerHTML = `
+                    <div class="no-products">
+                        <i class="fas fa-star" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <h3>Топ товаров пока нет</h3>
+                        <p>Администратор может добавить товары в топ</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Ограничиваем до 6 топ товаров
+            const displayTopProducts = topProducts.slice(0, 6);
+            
+            displayTopProducts.forEach(product => {
+                const shortDescription = product.description.length > 100 
+                    ? product.description.substring(0, 100) + '...' 
+                    : product.description;
+
+                const mainImage = product.images && product.images.length > 0 
+                    ? product.images[0] 
+                    : 'https://via.placeholder.com/300x200?text=No+Image';
+
+                const card = document.createElement('div');
+                card.className = 'product-card fade-in-up';
+                card.innerHTML = `
+                    <div class="product-badge">
+                        <i class="fas fa-star"></i> ТОП ТОВАР
+                    </div>
+                    <img src="${mainImage}" alt="${product.name}" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">${getCategoryName(product.category)}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description-short">${shortDescription}</p>
+                        <div class="product-rating">
+                            <span class="rating-value">${product.rating || 8.5}/10</span>
+                        </div>
+                        <p class="product-price">${product.price}</p>
+                    </div>
+                `;
+                
+                card.addEventListener('click', () => openProductDetail(product));
+                grid.appendChild(card);
+            });
+        }
+
+        // 🎨 Отрисовка комментариев
+        function renderComments() {
+            const container = document.getElementById('commentsList');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            if (comments.length === 0) {
+                container.innerHTML = `
+                    <div class="no-comments">
+                        <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <h3>Комментариев пока нет</h3>
+                        <p>Будьте первым, кто оставит отзыв!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Сортируем комментарии по дате (новые сначала)
+            const sortedComments = [...comments].sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            sortedComments.forEach(comment => {
+                const commentElement = document.createElement('div');
+                commentElement.className = 'comment';
+                commentElement.innerHTML = `
+                    <div class="comment-header">
+                        <div class="comment-author">${comment.author}</div>
+                        <div class="comment-date">${formatDate(comment.date)}</div>
+                    </div>
+                    <div class="comment-text">${comment.text}</div>
+                `;
+                container.appendChild(commentElement);
+            });
+        }
+
+        // 📅 Форматирование даты
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('ru-RU', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        // 💬 Добавление комментария
+        async function addComment(author, text) {
+            const newComment = {
+                id: Date.now(),
+                author: author,
+                text: text,
+                date: new Date().toISOString()
+            };
+            
+            comments.push(newComment);
+            const success = await saveToFirebase('comments', comments);
+            
+            if (success) {
+                renderComments();
+                return true;
+            }
+            return false;
+        }
+
+        // 🗑️ Удаление комментария
+        async function deleteComment(commentId) {
+            comments = comments.filter(comment => comment.id !== commentId);
+            const success = await saveToFirebase('comments', comments);
+            
+            if (success) {
+                renderComments();
+                renderAdminComments();
+                return true;
+            }
+            return false;
+        }
+
+        // ⭐ Добавление товара в топ
+        async function addToTopProducts(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                product.isTop = true;
+                const success = await saveToFirebase('products', products);
+                if (success) {
+                    loadTopProducts();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // ❌ Удаление товара из топа
+        async function removeFromTopProducts(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                product.isTop = false;
+                const success = await saveToFirebase('products', products);
+                if (success) {
+                    loadTopProducts();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // 🎯 Функции фильтрации и сортировки (остаются без изменений)
         function applyFilters() {
             const sortBy = document.getElementById('priceSort').value;
             const searchQuery = document.getElementById('searchInput').value.toLowerCase();
@@ -1705,21 +2081,14 @@
                 const card = document.createElement('div');
                 card.className = 'product-card fade-in-up';
                 card.innerHTML = `
-                    <div class="product-badge">${product.images && product.images.length > 1 ? '📸 ' + product.images.length + ' фото' : 'НОВИНКА'}</div>
+                    ${product.isTop ? '<div class="product-badge"><i class="fas fa-star"></i> ТОП</div>' : '<div class="product-badge">НОВИНКА</div>'}
                     <img src="${mainImage}" alt="${product.name}" class="product-image">
                     <div class="product-info">
                         <div class="product-category">${getCategoryName(product.category)}</div>
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-description-short">${shortDescription}</p>
                         <div class="product-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="rating-value">4.5/5</span>
+                            <span class="rating-value">${product.rating || 8.5}/10</span>
                         </div>
                         <p class="product-price">${product.price}</p>
                     </div>
@@ -1759,44 +2128,14 @@
                 const videoId = getYouTubeId(product.video);
                 
                 if (videoId) {
-                    // Проверяем доступность видео
-                    const isVideoAvailable = await checkYouTubeVideo(videoId);
-                    
-                    if (isVideoAvailable) {
-                        videoHTML = `
-                            <div class="video-container">
-                                <h3><i class="fab fa-youtube"></i> Обзор товара</h3>
-                                <iframe src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&enablejsapi=1" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen>
-                                </iframe>
-                            </div>
-                        `;
-                    } else {
-                        videoHTML = `
-                            <div class="video-container">
-                                <h3><i class="fab fa-youtube"></i> Обзор товара</h3>
-                                <div class="video-placeholder">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                    <p>Видео временно недоступно</p>
-                                    <p>Возможно, видео было удалено или ограничено</p>
-                                    <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="youtube-link">
-                                        <i class="fab fa-youtube"></i> Посмотреть на YouTube
-                                    </a>
-                                </div>
-                            </div>
-                        `;
-                    }
-                } else {
                     videoHTML = `
                         <div class="video-container">
                             <h3><i class="fab fa-youtube"></i> Обзор товара</h3>
-                            <div class="video-placeholder">
-                                <i class="fas fa-exclamation-circle"></i>
-                                <p>Неверный формат YouTube ссылки</p>
-                                <p>Пожалуйста, проверьте правильность ссылки на видео</p>
-                            </div>
+                            <iframe src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&enablejsapi=1" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
                         </div>
                     `;
                 }
@@ -1862,6 +2201,9 @@
                     ${galleryHTML}
                     <div class="product-details">
                         <p class="product-price">${product.price}</p>
+                        <div class="product-rating">
+                            <span class="rating-value">Рейтинг: ${product.rating || 8.5}/10</span>
+                        </div>
                         <div class="product-description-full">
                             <h3><i class="fas fa-align-left"></i> Описание</h3>
                             <p>${product.description}</p>
@@ -1943,6 +2285,14 @@
                 showAdminSection('manageProductsSection');
                 renderAdminProducts();
             });
+            document.getElementById('manageTopProductsBtn').addEventListener('click', () => {
+                showAdminSection('manageTopProductsSection');
+                renderAdminTopProducts();
+            });
+            document.getElementById('manageCommentsBtn').addEventListener('click', () => {
+                showAdminSection('manageCommentsSection');
+                renderAdminComments();
+            });
 
             document.getElementById('exportDataBtn').addEventListener('click', exportToJSON);
             document.getElementById('logoutBtn').addEventListener('click', () => {
@@ -1969,6 +2319,7 @@
                 const price = document.getElementById('productPrice').value;
                 const description = document.getElementById('productDescription').value;
                 const video = document.getElementById('productVideo').value;
+                const isTop = document.getElementById('isTopProduct').checked;
                 
                 // Собираем все URL фото
                 const imageInputs = document.querySelectorAll('.image-url-input');
@@ -1989,10 +2340,14 @@
                     images: images,
                     description: description,
                     video: video,
-                    features: []
+                    features: [],
+                    rating: 8.5,
+                    isTop: isTop
                 };
                 
-                const success = await saveProduct(newProduct);
+                products.push(newProduct);
+                const success = await saveToFirebase('products', products);
+                
                 if (success) {
                     document.getElementById('addProductForm').reset();
                     // Очищаем поля с фото
@@ -2005,9 +2360,34 @@
                         </div>
                     `;
                     document.getElementById('imagePreview').style.display = 'none';
+                    document.getElementById('isTopProduct').checked = false;
+                    
+                    loadTopProducts();
                     alert('✅ Товар успешно добавлен!');
                 } else {
                     alert('❌ Ошибка при добавлении товара');
+                }
+            });
+
+            // Форма добавления комментария
+            document.getElementById('addCommentForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const author = document.getElementById('commentAuthor').value;
+                const text = document.getElementById('commentText').value;
+                
+                if (!author || !text) {
+                    alert('❌ Пожалуйста, заполните все поля');
+                    return;
+                }
+                
+                const success = await addComment(author, text);
+                
+                if (success) {
+                    document.getElementById('addCommentForm').reset();
+                    alert('✅ Комментарий успешно добавлен!');
+                } else {
+                    alert('❌ Ошибка при добавлении комментария');
                 }
             });
         }
@@ -2079,29 +2459,125 @@
                              style="width: 100px; height: 100px; object-fit: cover; border-radius: 10px;">
                         <div style="flex: 1;">
                             <h4 style="margin-bottom: 0.5rem; color: var(--text-light);">${product.name}</h4>
-                            <p style="color: var(--accent-teal); font-weight: bold; margin-bottom: 0.5rem;">${product.price}</p>
+                            <p style="color: var(--accent-orange); font-weight: bold; margin-bottom: 0.5rem;">${product.price}</p>
                             <p style="color: var(--text-gray); font-size: 0.9rem;">
                                 ${getCategoryName(product.category)} • 
                                 ${product.images ? '📸 ' + product.images.length + ' фото' : '📷 Нет фото'} • 
                                 ${product.video ? '📹 Есть видео' : '🎬 Нет видео'} • 
+                                ${product.isTop ? '⭐ В топе' : '⚪ Обычный'} • 
                                 ID: ${product.id}
                             </p>
                         </div>
-                        <button onclick="adminDeleteProduct(${product.id})" 
-                                style="background: #ef4444; color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600;">
-                            <i class="fas fa-trash"></i> Удалить
-                        </button>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button onclick="adminDeleteProduct(${product.id})" 
+                                    style="background: #ef4444; color: white; border: none; padding: 0.7rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600;">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
                     </div>
                 `;
                 adminList.appendChild(productItem);
             });
         }
 
+        // ⭐ Отрисовка топ товаров в админке
+        function renderAdminTopProducts() {
+            const adminList = document.getElementById('adminTopProductsList');
+            if (!adminList) return;
+            
+            adminList.innerHTML = '';
+            
+            const topProductsList = products.filter(p => p.isTop);
+            
+            if (topProductsList.length === 0) {
+                adminList.innerHTML = '<p style="text-align: center; color: var(--text-gray); padding: 2rem;">Топ товаров нет</p>';
+                return;
+            }
+            
+            topProductsList.forEach(product => {
+                const productItem = document.createElement('div');
+                productItem.className = 'product-card';
+                productItem.style.marginBottom = '1rem';
+                productItem.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 1.5rem; padding: 1.5rem;">
+                        <img src="${product.images && product.images.length > 0 ? product.images[0] : 'https://via.placeholder.com/100x100?text=No+Image'}" 
+                             alt="${product.name}" 
+                             style="width: 100px; height: 100px; object-fit: cover; border-radius: 10px;">
+                        <div style="flex: 1;">
+                            <h4 style="margin-bottom: 0.5rem; color: var(--text-light);">${product.name}</h4>
+                            <p style="color: var(--accent-orange); font-weight: bold; margin-bottom: 0.5rem;">${product.price}</p>
+                            <p style="color: var(--text-gray); font-size: 0.9rem;">
+                                ${getCategoryName(product.category)} • 
+                                Рейтинг: ${product.rating || 8.5}/10
+                            </p>
+                        </div>
+                        <button onclick="adminRemoveFromTop(${product.id})" 
+                                style="background: #ef4444; color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600;">
+                            <i class="fas fa-star"></i> Убрать из топа
+                        </button>
+                    </div>
+                `;
+                adminList.appendChild(productItem);
+            });
+
+            // Добавляем секцию для добавления товаров в топ
+            const addToTopSection = document.createElement('div');
+            addToTopSection.style.marginTop = '2rem';
+            addToTopSection.innerHTML = `
+                <h4 style="margin-bottom: 1rem; color: var(--text-light);">Добавить товар в топ</h4>
+                <select id="addToTopSelect" style="width: 100%; padding: 0.8rem; background: var(--black); border: 2px solid #333; border-radius: 8px; color: var(--text-light); margin-bottom: 1rem;">
+                    <option value="">Выберите товар</option>
+                    ${products.filter(p => !p.isTop).map(p => `<option value="${p.id}">${p.name} - ${p.price}</option>`).join('')}
+                </select>
+                <button onclick="adminAddToTop()" style="background: var(--accent-orange); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%;">
+                    <i class="fas fa-plus"></i> Добавить в топ
+                </button>
+            `;
+            adminList.appendChild(addToTopSection);
+        }
+
+        // 💬 Отрисовка комментариев в админке
+        function renderAdminComments() {
+            const adminList = document.getElementById('adminCommentsList');
+            if (!adminList) return;
+            
+            adminList.innerHTML = '';
+            
+            if (comments.length === 0) {
+                adminList.innerHTML = '<p style="text-align: center; color: var(--text-gray); padding: 2rem;">Комментариев нет</p>';
+                return;
+            }
+            
+            // Сортируем комментарии по дате (новые сначала)
+            const sortedComments = [...comments].sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            sortedComments.forEach(comment => {
+                const commentItem = document.createElement('div');
+                commentItem.className = 'comment-admin-item';
+                commentItem.innerHTML = `
+                    <div class="comment-admin-info">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                            <strong style="color: var(--accent-orange);">${comment.author}</strong>
+                            <span style="color: var(--text-gray); font-size: 0.9rem;">${formatDate(comment.date)}</span>
+                        </div>
+                        <div class="comment-admin-text">${comment.text}</div>
+                    </div>
+                    <button onclick="adminDeleteComment(${comment.id})" class="delete-comment-btn">
+                        <i class="fas fa-trash"></i> Удалить
+                    </button>
+                `;
+                adminList.appendChild(commentItem);
+            });
+        }
+
         // 🗑️ Удаление товара из админки
         async function adminDeleteProduct(productId) {
             if (confirm('❌ Вы уверены, что хотите удалить этот товар? Это действие нельзя отменить.')) {
-                const success = await deleteProductFromFirebase(productId);
+                products = products.filter(p => p.id !== productId);
+                const success = await saveToFirebase('products', products);
                 if (success) {
+                    loadTopProducts();
+                    renderAdminProducts();
                     alert('✅ Товар удален!');
                 } else {
                     alert('❌ Ошибка при удалении товара');
@@ -2109,14 +2585,72 @@
             }
         }
 
+        // ⭐ Добавление товара в топ из админки
+        async function adminAddToTop() {
+            const select = document.getElementById('addToTopSelect');
+            const productId = parseInt(select.value);
+            
+            if (!productId) {
+                alert('❌ Пожалуйста, выберите товар');
+                return;
+            }
+            
+            const success = await addToTopProducts(productId);
+            if (success) {
+                select.value = '';
+                alert('✅ Товар добавлен в топ!');
+            } else {
+                alert('❌ Ошибка при добавлении товара в топ');
+            }
+        }
+
+        // ❌ Удаление товара из топа из админки
+        async function adminRemoveFromTop(productId) {
+            if (confirm('❌ Убрать этот товар из топа?')) {
+                const success = await removeFromTopProducts(productId);
+                if (success) {
+                    alert('✅ Товар убран из топа!');
+                renderAdminTopProducts();
+                loadTopProducts();
+                renderTopProducts();
+                applyFilters();
+                renderProducts();
+            } else {
+                alert('❌ Ошибка при удалении товара из топа');
+            }
+        }
+
+        // 🗑️ Удаление комментария из админки
+        async function adminDeleteComment(commentId) {
+            if (confirm('❌ Вы уверены, что хотите удалить этот комментарий?')) {
+                const success = await deleteComment(commentId);
+                if (success) {
+                    alert('✅ Комментарий удален!');
+                renderAdminComments();
+                renderComments();
+                applyFilters();
+                renderProducts();
+                renderTopProducts();
+            } else {
+                alert('❌ Ошибка при удалении комментария');
+            }
+        }
+
         // 📤 Экспорт в JSON
         function exportToJSON() {
-            const dataStr = JSON.stringify(products, null, 2);
+            const data = {
+                products: products,
+                topProducts: topProducts,
+                comments: comments,
+                exportDate: new Date().toISOString()
+            };
+            
+            const dataStr = JSON.stringify(data, null, 2);
             const dataBlob = new Blob([dataStr], { type: 'application/json' });
             
             const link = document.createElement('a');
             link.href = URL.createObjectURL(dataBlob);
-            link.download = `ggpoint-products-${new Date().toISOString().split('T')[0]}.json`;
+            link.download = `ggpoint-data-${new Date().toISOString().split('T')[0]}.json`;
             link.click();
             
             alert('📥 JSON файл экспортирован!');
@@ -2124,6 +2658,9 @@
 
         // 🌐 Глобальные функции
         window.adminDeleteProduct = adminDeleteProduct;
+        window.adminAddToTop = adminAddToTop;
+        window.adminRemoveFromTop = adminRemoveFromTop;
+        window.adminDeleteComment = adminDeleteComment;
         window.addImageInput = addImageInput;
         window.updateImagePreview = updateImagePreview;
         window.changeImage = changeImage;
@@ -2134,7 +2671,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('🚀 GGPoint каталог запускается...');
             
-            loadProducts();
+            loadData();
             initAdmin();
             
             // Обработчики фильтров
