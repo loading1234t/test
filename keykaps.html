@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GG Point — Кейкапы для клавиатур</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #2563eb;
+            --primary-dark: #1e40af;
+            --accent-teal: #0d9488;
+            --accent-purple: #7c3aed;
+            --sale-red: #ef4444;
+            --sale-orange: #f97316;
+            --discount-pink: #db2777;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+            --text-gray: #cbd5e1;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --keycap-gradient: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* 🎯 Хедер для страницы кейкапов */
+        .keycaps-header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent-purple);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: var(--keycap-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-to-main {
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* 🎨 Герой-секция для кейкапов */
+        .keycaps-hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 0 2rem;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .keycaps-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%237c3aed" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: var(--keycap-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        /* 🎨 Стили для секции кейкапов */
+        .keycaps-section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: var(--keycap-gradient);
+            border-radius: 2px;
+        }
+
+        .keycaps-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .keycaps-tab {
+            background: rgba(30, 41, 59, 0.5);
+            border: 2px solid #334155;
+            color: var(--text-light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .keycaps-tab i {
+            font-size: 0.8rem;
+        }
+
+        .keycaps-tab:hover {
+            background: rgba(124, 58, 237, 0.2);
+            border-color: var(--accent-purple);
+            transform: translateY(-2px);
+        }
+
+        .keycaps-tab.active {
+            background: var(--keycap-gradient);
+            border-color: transparent;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+        }
+
+        .keycaps-filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid #334155;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-group label {
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .filter-select {
+            background: var(--dark-bg);
+            border: 2px solid #334155;
+            border-radius: 10px;
+            padding: 0.8rem 1rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        .keycaps-count {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            background: rgba(124, 58, 237, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-purple);
+        }
+
+        .keycaps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .keycap-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 2px solid #334155;
+            cursor: pointer;
+            position: relative;
+            animation: keycapFloat 3s ease-in-out infinite;
+        }
+
+        .keycap-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-purple);
+            animation: none;
+        }
+
+        @keyframes keycapFloat {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .keycap-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--keycap-gradient);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
+            box-shadow: 0 3px 10px rgba(124, 58, 237, 0.3);
+        }
+
+        .keycap-image-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .keycap-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            padding: 1rem;
+        }
+
+        .keycap-card:hover .keycap-image {
+            transform: scale(1.1);
+        }
+
+        .keycap-info {
+            padding: 1.5rem;
+        }
+
+        .keycap-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .keycap-profile {
+            font-size: 0.9rem;
+            color: var(--accent-purple);
+            background: rgba(124, 58, 237, 0.1);
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .keycap-description {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            font-size: 0.95rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .keycap-price {
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .keycap-colors {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .color-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid var(--text-light);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .color-dot:hover {
+            transform: scale(1.2);
+        }
+
+        /* 📱 Адаптивность */
+        @media (max-width: 768px) {
+            .keycaps-header {
+                padding: 1rem;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .keycaps-hero {
+                height: 40vh;
+                margin-top: 60px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .keycaps-section {
+                padding: 3rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .keycaps-tabs {
+                gap: 0.5rem;
+            }
+            
+            .keycaps-tab {
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .keycaps-filters {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            
+            .keycaps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .keycap-image-container {
+                height: 200px;
+            }
+        }
+
+        /* 🏷️ Футер */
+        footer {
+            background: var(--card-bg);
+            padding: 4rem 2rem;
+            border-top: 2px solid var(--accent-purple);
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-purple);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 🎯 Хедер страницы кейкапов -->
+    <header class="keycaps-header">
+        <div class="logo">GGPOINT KEYCAPS</div>
+        <a href="index.html" class="back-to-main">
+            <i class="fas fa-arrow-left"></i> На главную
+        </a>
+    </header>
+
+    <!-- 🎨 Герой-секция -->
+    <section class="keycaps-hero">
+        <div class="hero-content">
+            <h1>Кейкапы для клавиатур</h1>
+            <p>Коллекция премиальных кейкапов от мировых брендов. Кастомизируйте свою клавиатуру!</p>
+        </div>
+    </section>
+
+    <!-- 🎯 Основная секция кейкапов -->
+    <section class="keycaps-section">
+        <h2 class="section-title">Наши кейкапы</h2>
+        
+        <!-- 🎛️ Табы для фильтрации -->
+        <div class="keycaps-tabs">
+            <button class="keycaps-tab active" data-type="all">
+                <i class="fas fa-layer-group"></i> Все кейкапы
+            </button>
+            <button class="keycaps-tab" data-type="cherry">
+                <i class="fas fa-chevron-down"></i> Cherry Profile
+            </button>
+            <button class="keycaps-tab" data-type="oem">
+                <i class="fas fa-square"></i> OEM Profile
+            </button>
+            <button class="keycaps-tab" data-type="xda">
+                <i class="fas fa-circle"></i> XDA Profile
+            </button>
+            <button class="keycaps-tab" data-type="sa">
+                <i class="fas fa-chevron-up"></i> SA Profile
+            </button>
+            <button class="keycaps-tab" data-type="pbt">
+                <i class="fas fa-shield-alt"></i> PBT Материал
+            </button>
+        </div>
+        
+        <!-- 🔍 Фильтры -->
+        <div class="keycaps-filters">
+            <div class="filter-group">
+                <label><i class="fas fa-palette"></i> Цветовая схема</label>
+                <select class="filter-select" id="keycapColorFilter">
+                    <option value="all">Все цвета</option>
+                    <option value="черный">Черные</option>
+                    <option value="белый">Белые</option>
+                    <option value="красный">Красные</option>
+                    <option value="синий">Синие</option>
+                    <option value="зеленый">Зеленые</option>
+                    <option value="радуга">Радужные</option>
+                    <option value="градиент">Градиент</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label><i class="fas fa-layer-group"></i> Профиль</label>
+                <select class="filter-select" id="keycapProfileFilter">
+                    <option value="all">Все профили</option>
+                    <option value="cherry">Cherry</option>
+                    <option value="oem">OEM</option>
+                    <option value="xda">XDA</option>
+                    <option value="sa">SA</option>
+                    <option value="dsa">DSA</option>
+                    <option value="kda">KDA</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label><i class="fas fa-search"></i> Поиск</label>
+                <input type="text" class="filter-select" id="keycapSearch" placeholder="Название кейкапов...">
+            </div>
+        </div>
+        
+        <div class="keycaps-count" id="keycapsCount">Загружаем кейкапы...</div>
+        
+        <!-- 📦 Сетка кейкапов -->
+        <div class="keycaps-grid" id="keycapsGrid">
+            <!-- Кейкапы будут загружены через JavaScript -->
+            <div class="keycap-card" style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--accent-purple); margin-bottom: 1rem;"></i>
+                <p>Загружаем кейкапы...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📞 Футер -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GGPoint Keycaps</h3>
+                <p>Специализированный раздел премиальных кейкапов для механических клавиатур.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+998 97 747 0157</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <span><a href="https://t.me/GGPointUz" style="color: var(--text-light);">@GGPointUz</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>keycaps@ggpoint.uz</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Информация</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Доставка по Узбекистану</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Гарантия качества</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-headset"></i>
+                        <span>Поддержка 24/7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 🚀 JavaScript для кейкапов -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
+        import { getDatabase, ref, onValue, set } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
+
+        // Конфигурация Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDcyOWAF7TA8h8P36Sk5EbDPzA9sEFuTXo",
+            authDomain: "ggpoint-shop.firebaseapp.com",
+            databaseURL: "https://ggpoint-shop-default-rtdb.firebaseio.com",
+            projectId: "ggpoint-shop",
+            storageBucket: "ggpoint-shop.firebasestorage.app",
+            messagingSenderId: "182227173652",
+            appId: "1:182227173652:web:0949e2edae9900afd98201",
+            measurementId: "G-V76H7K3VR4"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        let keycaps = [];
+
+        // 📥 Загрузка кейкапов
+        function loadKeycaps() {
+            const keycapsRef = ref(database, 'keycaps');
+            onValue(keycapsRef, (snapshot) => {
+                const data = snapshot.val();
+                if (data) {
+                    keycaps = Object.values(data);
+                    console.log('✅ Кейкапы загружены:', keycaps.length);
+                } else {
+                    keycaps = getDefaultKeycaps();
+                    saveDefaultKeycaps();
+                }
+                renderKeycaps();
+                updateKeycapsCount();
+                setupFilters();
+            });
+        }
+
+        // 💾 Сохранение тестовых кейкапов
+        async function saveDefaultKeycaps() {
+            const defaultKeycaps = getDefaultKeycaps();
+            try {
+                for (const keycap of defaultKeycaps) {
+                    const keycapRef = ref(database, 'keycaps/' + keycap.id);
+                    await set(keycapRef, keycap);
+                }
+                console.log('✅ Тестовые кейкапы сохранены');
+            } catch (error) {
+                console.error('❌ Ошибка сохранения:', error);
+            }
+        }
+
+        // 🎨 Тестовые кейкапы
+        function getDefaultKeycaps() {
+            return [
+                {
+                    id: 1,
+                    name: "GMK Laser",
+                    profile: "cherry",
+                    material: "abs",
+                    price: "599,000 UZS",
+                    colors: "Фиолетовый, Розовый, Голубой",
+                    compatibility: "104 клавиши, ISO/ANSI",
+                    description: "Культовый набор кейкапов в стиле киберпанк с неоновыми цветами. Double-shot ABS пластик.",
+                    images: [
+                        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    ],
+                    isPopular: true,
+                    dateAdded: new Date().toISOString()
+                },
+                {
+                    id: 2,
+                    name: "XDA Canvas",
+                    profile: "xda",
+                    material: "pbt",
+                    price: "399,000 UZS",
+                    colors: "Бежевый, Серый, Оранжевый",
+                    compatibility: "87-108 клавиш",
+                    description: "Элегантные кейкапы в минималистичном стиле. PBT пластик, сублимационная печать.",
+                    images: [
+                        "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    ],
+                    isPopular: false,
+                    dateAdded: new Date().toISOString()
+                },
+                {
+                    id: 3,
+                    name: "OEM Black on White",
+                    profile: "oem",
+                    material: "pbt",
+                    price: "259,000 UZS",
+                    colors: "Черный, Белый",
+                    compatibility: "Полный набор 108 клавиш",
+                    description: "Классические черно-белые кейкапы. PBT пластик, не блестит со временем.",
+                    images: [
+                        "https://images.unsplash.com/photo-1601445638532-3c6f6c3aa1d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    ],
+                    isPopular: true,
+                    dateAdded: new Date().toISOString()
+                },
+                {
+                    id: 4,
+                    name: "SA Carbon",
+                    profile: "sa",
+                    material: "abs",
+                    price: "699,000 UZS",
+                    colors: "Оранжевый, Черный, Бежевый",
+                    compatibility: "TKL, Fullsize",
+                    description: "Высокопрофильные кейкапы в ретро-стиле. Долговечные, отличное качество.",
+                    images: [
+                        "https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    ],
+                    isPopular: true,
+                    dateAdded: new Date().toISOString()
+                },
+                {
+                    id: 5,
+                    name: "DSA Dolch",
+                    profile: "dsa",
+                    material: "pbt",
+                    price: "449,000 UZS",
+                    colors: "Серый, Красный, Черный",
+                    compatibility: "60%, 65%, 75%",
+                    description: "Низкопрофильные кейкапы в классической цветовой схеме. Идеально для компактных клавиатур.",
+                    images: [
+                        "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    ],
+                    isPopular: false,
+                    dateAdded: new Date().toISOString()
+                },
+                {
+                    id: 6,
+                    name: "KAT Alpha",
+                    profile: "kda",
+                    material: "pbt",
+                    price: "379,000 UZS",
+                    colors: "Белый, Серый, Синий",
+                    compatibility: "Все форматы",
+                    description: "Современные кейкапы с улучшенной эргономикой. Толстый PBT пластик.",
+                    images: [
+                        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    ],
+                    isPopular: true,
+                    dateAdded: new Date().toISOString()
+                }
+            ];
+        }
+
+        // 🎯 Отрисовка кейкапов
+        function renderKeycaps() {
+            const grid = document.getElementById('keycapsGrid');
+            if (!grid) return;
+            
+            // Получаем активные фильтры
+            const activeTab = document.querySelector('.keycaps-tab.active')?.dataset.type || 'all';
+            const colorFilter = document.getElementById('keycapColorFilter')?.value || 'all';
+            const profileFilter = document.getElementById('keycapProfileFilter')?.value || 'all';
+            const searchQuery = document.getElementById('keycapSearch')?.value.toLowerCase() || '';
+            
+            // Фильтрация
+            let filteredKeycaps = [...keycaps];
+            
+            if (activeTab !== 'all') {
+                if (activeTab === 'pbt') {
+                    filteredKeycaps = filteredKeycaps.filter(k => k.material?.toLowerCase() === 'pbt');
+                } else {
+                    filteredKeycaps = filteredKeycaps.filter(k => k.profile?.toLowerCase() === activeTab);
+                }
+            }
+            
+            if (colorFilter !== 'all') {
+                filteredKeycaps = filteredKeycaps.filter(k => 
+                    k.colors?.toLowerCase().includes(colorFilter.toLowerCase())
+                );
+            }
+            
+            if (profileFilter !== 'all') {
+                filteredKeycaps = filteredKeycaps.filter(k => 
+                    k.profile?.toLowerCase() === profileFilter.toLowerCase()
+                );
+            }
+            
+            if (searchQuery) {
+                filteredKeycaps = filteredKeycaps.filter(k => 
+                    k.name.toLowerCase().includes(searchQuery) ||
+                    k.description.toLowerCase().includes(searchQuery)
+                );
+            }
+            
+            // Отрисовка
+            if (filteredKeycaps.length === 0) {
+                grid.innerHTML = `
+                    <div class="keycap-card" style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                        <i class="fas fa-search" style="font-size: 2rem; color: var(--text-gray); margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-light);">Кейкапы не найдены</h3>
+                        <p style="color: var(--text-gray);">Попробуйте изменить фильтры или поисковый запрос</p>
+                        <button onclick="resetFilters()" style="margin-top: 1.5rem; padding: 0.8rem 1.5rem; 
+                                background: var(--accent-purple); border: none; border-radius: 8px; 
+                                color: white; cursor: pointer;">
+                            <i class="fas fa-redo"></i> Сбросить фильтры
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+            
+            grid.innerHTML = '';
+            
+            filteredKeycaps.forEach((keycap, index) => {
+                const card = document.createElement('div');
+                card.className = 'keycap-card';
+                card.style.animationDelay = `${index * 0.1}s`;
+                
+                // Генерация цветовых точек
+                let colorsHtml = '';
+                if (keycap.colors) {
+                    const colors = keycap.colors.split(',').slice(0, 4);
+                    colorsHtml = colors.map(color => {
+                        const colorName = color.trim().toLowerCase();
+                        let bgColor = '#666';
+                        
+                        // Маппинг цветов
+                        if (colorName.includes('черн')) bgColor = '#000000';
+                        else if (colorName.includes('бел')) bgColor = '#ffffff';
+                        else if (colorName.includes('красн')) bgColor = '#ff0000';
+                        else if (colorName.includes('син')) bgColor = '#0000ff';
+                        else if (colorName.includes('зелен')) bgColor = '#00ff00';
+                        else if (colorName.includes('фиолет')) bgColor = '#800080';
+                        else if (colorName.includes('розов')) bgColor = '#ff69b4';
+                        else if (colorName.includes('оранж')) bgColor = '#ffa500';
+                        else if (colorName.includes('голуб')) bgColor = '#87ceeb';
+                        else if (colorName.includes('сер')) bgColor = '#808080';
+                        else if (colorName.includes('беж')) bgColor = '#f5deb3';
+                        
+                        return `<div class="color-dot" style="background: ${bgColor};" title="${color.trim()}"></div>`;
+                    }).join('');
+                }
+                
+                card.innerHTML = `
+                    ${keycap.isPopular ? `
+                    <div class="keycap-badge">
+                        <i class="fas fa-star"></i> Популярный
+                    </div>
+                    ` : ''}
+                    
+                    ${keycap.material === 'pbt' ? `
+                    <div class="keycap-badge" style="background: var(--accent-teal); top: 50px;">
+                        <i class="fas fa-shield-alt"></i> PBT
+                    </div>
+                    ` : ''}
+                    
+                    <div class="keycap-image-container">
+                        <img src="${keycap.images && keycap.images.length > 0 ? keycap.images[0] : 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'}" 
+                             alt="${keycap.name}" 
+                             class="keycap-image"
+                             loading="lazy">
+                    </div>
+                    
+                    <div class="keycap-info">
+                        <div class="keycap-profile">${getProfileName(keycap.profile)}</div>
+                        <h3 class="keycap-name">${keycap.name}</h3>
+                        
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem;">
+                            <span style="color: var(--text-gray); font-size: 0.9rem;">
+                                <i class="fas fa-layer-group"></i> ${getMaterialName(keycap.material)}
+                            </span>
+                            <span style="color: var(--text-gray);">•</span>
+                            <span style="color: var(--text-gray); font-size: 0.9rem;">
+                                <i class="fas fa-keyboard"></i> ${keycap.compatibility || 'Стандарт'}
+                            </span>
+                        </div>
+                        
+                        <p class="keycap-description">${keycap.description.length > 80 ? 
+                            keycap.description.substring(0, 80) + '...' : keycap.description}</p>
+                        
+                        <div class="keycap-price">${keycap.price}</div>
+                        
+                        ${colorsHtml ? `
+                        <div style="margin-top: 1rem;">
+                            <div style="font-size: 0.8rem; color: var(--text-gray); margin-bottom: 0.5rem;">
+                                <i class="fas fa-palette"></i> Цвета
+                            </div>
+                            <div class="keycap-colors">${colorsHtml}</div>
+                        </div>
+                        ` : ''}
+                        
+                        <button onclick="viewKeycapDetail(${keycap.id})" 
+                                style="width: 100%; padding: 0.8rem; margin-top: 1rem; 
+                                       background: var(--keycap-gradient); border: none; 
+                                       border-radius: 8px; color: white; cursor: pointer; 
+                                       font-weight: 600; display: flex; align-items: center; 
+                                       justify-content: center; gap: 0.5rem;">
+                            <i class="fas fa-eye"></i> Подробнее
+                        </button>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+            
+            updateKeycapsCount(filteredKeycaps.length);
+        }
+
+        // 🔄 Обновление счетчика
+        function updateKeycapsCount(count) {
+            const countElement = document.getElementById('keycapsCount');
+            if (countElement) {
+                countElement.textContent = `Найдено наборов: ${count}`;
+            }
+        }
+
+        // 🏷️ Получение названий
+        function getProfileName(profile) {
+            const profiles = {
+                'cherry': 'Cherry Profile',
+                'oem': 'OEM Profile',
+                'xda': 'XDA Profile',
+                'sa': 'SA Profile',
+                'dsa': 'DSA Profile',
+                'kda': 'KDA Profile'
+            };
+            return profiles[profile?.toLowerCase()] || profile || 'Профиль';
+        }
+
+        function getMaterialName(material) {
+            const materials = {
+                'abs': 'ABS пластик',
+                'pbt': 'PBT пластик',
+                'double-shot': 'Double-shot',
+                'dye-sublimated': 'Сублимация'
+            };
+            return materials[material?.toLowerCase()] || material || 'Материал';
+        }
+
+        // 🔧 Настройка фильтров
+        function setupFilters() {
+            // Табы
+            document.querySelectorAll('.keycaps-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.keycaps-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    renderKeycaps();
+                });
+            });
+            
+            // Фильтры
+            ['keycapColorFilter', 'keycapProfileFilter'].forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('change', renderKeycaps);
+                }
+            });
+            
+            // Поиск
+            const searchInput = document.getElementById('keycapSearch');
+            if (searchInput) {
+                searchInput.addEventListener('input', renderKeycaps);
+            }
+        }
+
+        // 🔄 Сброс фильтров
+        window.resetFilters = function() {
+            document.querySelectorAll('.keycaps-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector('.keycaps-tab[data-type="all"]').classList.add('active');
+            
+            document.getElementById('keycapColorFilter').value = 'all';
+            document.getElementById('keycapProfileFilter').value = 'all';
+            document.getElementById('keycapSearch').value = '';
+            
+            renderKeycaps();
+        };
+
+        // 👁️ Просмотр деталей кейкапа
+        window.viewKeycapDetail = function(keycapId) {
+            const keycap = keycaps.find(k => k.id === keycapId);
+            if (!keycap) return;
+            
+            // Создаем модальное окно
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                backdrop-filter: blur(5px);
+                z-index: 2000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: var(--card-bg); border-radius: 20px; padding: 2.5rem; 
+                     max-width: 1000px; width: 100%; max-height: 90vh; overflow-y: auto;
+                     border: 2px solid var(--accent-purple); position: relative;">
+                    <button onclick="this.parentElement.parentElement.remove()" 
+                            style="position: absolute; top: 20px; right: 20px; background: none;
+                                   border: none; color: var(--text-gray); font-size: 1.5rem;
+                                   cursor: pointer; width: 40px; height: 40px; display: flex;
+                                   align-items: center; justify-content: center; border-radius: 50%;
+                                   &:hover { background: rgba(124, 58, 237, 0.1); }">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                        <div>
+                            <img src="${keycap.images && keycap.images.length > 0 ? keycap.images[0] : 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'}" 
+                                 alt="${keycap.name}" 
+                                 style="width: 100%; border-radius: 15px;">
+                        </div>
+                        <div>
+                            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-light);">
+                                ${keycap.name}
+                            </h1>
+                            
+                            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                                <span style="color: var(--accent-purple); font-weight: 600; 
+                                      background: rgba(124, 58, 237, 0.1); padding: 0.3rem 1rem; 
+                                      border-radius: 15px;">${getProfileName(keycap.profile)}</span>
+                                <span style="color: var(--accent-teal); font-weight: 600; 
+                                      background: rgba(13, 148, 136, 0.1); padding: 0.3rem 1rem; 
+                                      border-radius: 15px;">${getMaterialName(keycap.material)}</span>
+                            </div>
+                            
+                            <div style="font-size: 2.5rem; color: var(--accent-teal); 
+                                  font-weight: bold; margin-bottom: 2rem;">${keycap.price}</div>
+                            
+                            <div style="margin-bottom: 2rem;">
+                                <h3 style="margin-bottom: 0.5rem; color: var(--text-light);">Описание</h3>
+                                <p style="color: var(--text-gray); line-height: 1.7;">${keycap.description}</p>
+                            </div>
+                            
+                            ${keycap.colors ? `
+                            <div style="margin-bottom: 1.5rem;">
+                                <h3 style="margin-bottom: 0.5rem; color: var(--text-light);">
+                                    <i class="fas fa-palette"></i> Цветовая схема
+                                </h3>
+                                <p style="color: var(--text-light);">${keycap.colors}</p>
+                            </div>
+                            ` : ''}
+                            
+                            ${keycap.compatibility ? `
+                            <div style="margin-bottom: 1.5rem;">
+                                <h3 style="margin-bottom: 0.5rem; color: var(--text-light);">
+                                    <i class="fas fa-keyboard"></i> Совместимость
+                                </h3>
+                                <p style="color: var(--text-light);">${keycap.compatibility}</p>
+                            </div>
+                            ` : ''}
+                            
+                            <button style="width: 100%; padding: 1rem; background: var(--keycap-gradient); 
+                                   border: none; border-radius: 10px; color: white; cursor: pointer; 
+                                   font-weight: bold; font-size: 1.1rem; margin-top: 2rem;">
+                                <i class="fas fa-shopping-cart"></i> Заказать кейкапы
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Закрытие при клике вне модалки
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        };
+
+        // 🚀 Запуск при загрузке
+        document.addEventListener('DOMContentLoaded', loadKeycaps);
+    </script>
+</body>
+</html>
