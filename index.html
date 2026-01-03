@@ -182,7 +182,7 @@
             box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
         }
 
-        /* 🎯 НОВАЯ СЕКЦИЯ - СКИДОЧНЫЕ ТОВАРЫ */
+        /* 🎯 СЕКЦИЯ - СКИДОЧНЫЕ ТОВАРЫ */
         .hot-prices-section {
             padding: 5rem 2rem;
             max-width: 1400px;
@@ -687,7 +687,7 @@
             font-weight: 600;
         }
 
-        /* 🎨 ИСПРАВЛЕННЫЕ карточки товаров - УДАЛЕН ФОН */
+        /* 🎨 ИСПРАВЛЕННЫЕ карточки товаров */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -726,7 +726,6 @@
             z-index: 2;
         }
 
-        /* ИСПРАВЛЕННЫЙ контейнер для изображения - БЕЗ ФОНА */
         .product-image-container {
             width: 100%;
             height: 280px;
@@ -1033,7 +1032,7 @@
             gap: 3rem;
         }
 
-        /* 🖼️ ИСПРАВЛЕННЫЕ стили для галереи фото - БЕЗ ФОНА */
+        /* 🖼️ Стили для галереи фото */
         .product-gallery {
             display: flex;
             flex-direction: column;
@@ -1135,10 +1134,6 @@
             color: var(--text-light);
             margin-top: 1rem;
             justify-content: center;
-        }
-
-        .photo-count i {
-            color: var(--primary-blue);
         }
 
         .product-description-full {
@@ -1394,6 +1389,197 @@
             transform: translateY(-2px);
         }
 
+        /* 💬 Стили для комментариев */
+        .comments-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 15px;
+            border: 1px solid #334155;
+        }
+
+        .comments-title {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .comment-form {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .comment-form h4 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .comment-input-group {
+            margin-bottom: 1rem;
+        }
+
+        .comment-input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .comment-input {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--dark-bg);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .comment-textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 0.8rem;
+            background: var(--dark-bg);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            resize: vertical;
+        }
+
+        .comment-submit-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .comment-submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .comments-list {
+            margin-top: 2rem;
+        }
+
+        .comment-item {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .comment-date {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        .comment-text {
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-status {
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .comment-status.pending {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+        }
+
+        .comment-status.approved {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+
+        .comment-status.rejected {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        .comment-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .comment-action-btn {
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .comment-approve-btn {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+
+        .comment-approve-btn:hover {
+            background: #22c55e;
+            color: white;
+        }
+
+        .comment-reject-btn {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        .comment-reject-btn:hover {
+            background: #ef4444;
+            color: white;
+        }
+
+        .comment-delete-btn {
+            background: rgba(148, 163, 184, 0.2);
+            color: #94a3b8;
+        }
+
+        .comment-delete-btn:hover {
+            background: #94a3b8;
+            color: white;
+        }
+
+        .no-comments {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-gray);
+            font-style: italic;
+        }
+
         /* ✨ Анимации */
         @keyframes fadeInUp {
             from {
@@ -1420,106 +1606,202 @@
             animation: discountPulse 2s infinite;
         }
 
-        /* 📱 Адаптивность */
+        /* 📱 ОПТИМИЗАЦИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
         @media (max-width: 768px) {
+            header {
+                padding: 0.8rem 1rem;
+            }
+            
+            .header-container {
+                flex-direction: row;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .menu-toggle {
+                display: block !important;
+                background: none;
+                border: none;
+                color: var(--text-light);
+                font-size: 1.8rem;
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                z-index: 1002;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--card-bg);
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+                transition: right 0.3s ease;
+                z-index: 1001;
+                padding: 80px 1.5rem 2rem;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            nav li {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            nav a {
+                display: block;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            nav a:hover {
+                background: var(--primary-blue);
+            }
+            
+            .menu-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                z-index: 1000;
+            }
+            
+            .menu-overlay.active {
+                display: block;
+            }
+            
+            .admin-btn {
+                display: none;
+            }
+            
+            .hero {
+                height: 70vh;
+                margin-top: 60px;
+                padding: 0 1rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .hot-prices-section {
+                padding: 3rem 1rem;
+            }
+            
             .hot-prices-header {
                 flex-direction: column;
-                align-items: flex-start;
+                gap: 1.5rem;
             }
             
             .hot-prices-title h2 {
                 font-size: 2.2rem;
             }
             
-            .hot-badge {
-                align-self: flex-start;
-            }
-            
             .hot-prices-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .hot-price-image-container {
+                height: 180px;
+            }
+            
+            .products {
+                padding: 3rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .filters-section {
+                padding: 1.5rem;
+                gap: 1rem;
+            }
+            
+            .filter-group {
+                min-width: 100%;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .product-image-container {
+                height: 200px;
             }
             
             .product-detail-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
             
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
+            .main-image {
+                min-height: 250px;
+                max-height: 300px;
             }
             
-            nav ul {
-                gap: 1rem;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .thumbnail {
+                width: 60px;
+                height: 60px;
             }
             
             .video-container iframe {
-                height: 250px;
-            }
-
-            .filters-section {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .filter-select {
-                width: 100%;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .admin-actions {
-                grid-template-columns: 1fr;
-            }
-
-            .main-image {
-                min-height: 300px;
-                padding: 0;
-            }
-
-            .gallery-nav {
-                padding: 0 0.5rem;
-            }
-
-            .nav-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-
-            .brands-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .brands-list {
-                grid-template-columns: 1fr;
-            }
-
-            .edit-buttons {
-                flex-direction: column;
+                height: 200px;
             }
             
-            .product-image-container {
-                height: 220px;
-                padding: 0;
+            footer {
+                padding: 3rem 1rem;
             }
-        }
-
-        .main-text {
-            font-size: 1.4rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            font-weight: 600;
-            text-align: center;
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .comments-section {
+                padding: 1.5rem;
+            }
+            
+            .comment-item {
+                padding: 1rem;
+            }
+            
+            .comment-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .comment-actions {
+                flex-wrap: wrap;
+            }
         }
 
         /* 📢 Стиль для уведомления о видео */
@@ -1540,24 +1822,25 @@
         .video-notification i {
             font-size: 1.5rem;
         }
-/* ❄️ Анимированные снежки в хедере */
-.header-snowflake {
-    position: fixed;
-    top: -30px; /* начинаем прямо под шапкой */
-    z-index: 1001;
-    pointer-events: none;
-    opacity: 0.7;
-    font-size: 1rem;
-    animation: header-fall linear forwards;
-    color: rgba(59, 130, 246, 0.7);
-}
 
-@keyframes header-fall {
-    to {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-}
+        /* ❄️ Снежки в хедере */
+        .header-snowflake {
+            position: fixed;
+            top: -30px;
+            z-index: 1001;
+            pointer-events: none;
+            opacity: 0.7;
+            font-size: 1rem;
+            animation: header-fall linear forwards;
+            color: rgba(59, 130, 246, 0.7);
+        }
+
+        @keyframes header-fall {
+            to {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1565,16 +1848,20 @@
     <header>
         <div class="header-container">
             <div class="logo">GGPOINT</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Главная</a></li>
-                    <li><a href="#hot-prices">Скидки</a></li>
-                    <li><a href="#categories">Категории</a></li>
-                    <li><a href="#brands">Бренды</a></li>
-                    <li><a href="#products">Товары</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                </ul>
-            </nav>
+            <<!-- В хедере найдите навигацию и добавьте: -->
+<nav>
+    <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#hot-prices">Скидки</a></li>
+        <li><a href="#categories">Категории</a></li>
+        <li><a href="#brands">Бренды</a></li>
+        <li><a href="#products">Периферия</a></li>
+        <!-- Добавьте эту строку: -->
+        <li><a href="keycaps.html" target="_blank" class="keycaps-link">
+            <i class="fas fa-keyboard"></i> Кейкапы
+        <li><a href="#contacts">Контакты</a></li>
+    </ul>
+</nav>
             <button class="admin-btn" id="adminBtn">
                 <i class="fas fa-cog"></i> Admin
             </button>
@@ -1591,7 +1878,7 @@
         </div>
     </section>
 
-    <!-- 🎯 НОВАЯ СЕКЦИЯ - СКИДОЧНЫЕ ТОВАРЫ -->
+    <!-- 🎯 СЕКЦИЯ - СКИДОЧНЫЕ ТОВАРЫ -->
     <section class="hot-prices-section" id="hot-prices">
         <div class="hot-prices-header">
             <div class="hot-prices-title">
@@ -1637,6 +1924,7 @@
                 <div class="category-name">Наушники</div>
                 <div class="category-count" id="headphonesCount">0 товаров</div>
             </div>
+            
         </div>
     </section>
 
@@ -1647,6 +1935,22 @@
             <!-- Бренды будут загружаться здесь -->
         </div>
     </section>
+    <!-- Добавьте где-нибудь на видном месте, например после героя: -->
+<div style="text-align: center; margin: 2rem 0;">
+    <a href="keycaps.html" target="_blank" f
+       style="display: inline-flex; align-items: center; gap: 1rem; 
+              background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%); 
+              color: white; padding: 1.2rem 2.5rem; border-radius: 15px; 
+              text-decoration: none; font-weight: bold; font-size: 1.2rem;
+              box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+              transition: all 0.3s ease;">
+        <i class="fas fa-external-link-alt"></i>
+        <span>Смотреть все кейкапы</span>
+        <i class="fas fa-arrow-right"></i>
+    </a>
+    <p style="color: var(--text-gray); margin-top: 1rem; font-size: 0.9rem;">
+    </p>
+</div>
 
     <!-- 🎪 Секция товаров -->
     <section class="products" id="products">
@@ -1664,7 +1968,9 @@
                     <option value="монитор">Мониторы</option>
                     <option value="кресло">Кресла</option>
                     <option value="коврик">Коврик</option>
+                    
                 </select>
+
             </div>
             
             <div class="filter-group">
@@ -1680,6 +1986,7 @@
                 <label><i class="fas fa-search"></i> Поиск</label>
                 <input type="text" class="filter-select" id="searchInput" placeholder="Название товара...">
             </div>
+            
 
             <div class="filter-group">
                 <label><i class="fas fa-tag"></i> Бренд</label>
@@ -1692,10 +1999,11 @@
 
         <div class="products-count" id="productsCount">Найдено товаров: 0</div>
         
-        <!-- 📢 Уведомление о видео из YouTube -->
+        <!-- 📢 Уведомление о видео -->
         <div class="video-notification" id="videoNotification" style="display: none;">
             <i class="fab fa-youtube"></i>
             <span>📢 ВНИМАНИЕ: Внизу страницы есть видео-обзор товаров на YouTube!</span>
+            
         </div>
         
         <div class="products-grid" id="productsGrid">
@@ -1763,6 +2071,9 @@
             <button class="admin-btn-action" id="manageBrandsBtn">
                 <i class="fas fa-tags"></i> Управление брендами
             </button>
+            <button class="admin-btn-action" id="manageCommentsBtn">
+                <i class="fas fa-comments"></i> Управление комментариями
+            </button>
             <button class="admin-btn-action" id="exportDataBtn">
                 <i class="fas fa-download"></i> Экспорт JSON
             </button>
@@ -1822,7 +2133,6 @@
                     </button>
                 </div>
                 
-                <!-- 🖼️ Секция для добавления фото -->
                 <div class="form-group">
                     <label>Фотографии товара *</label>
                     <div id="imageInputsContainer">
@@ -1843,13 +2153,9 @@
                 
                 <div class="form-group">
                     <label for="productVideo">YouTube видео (ID или ссылка)</label>
-                    <input type="text" id="productVideo" placeholder="dQw4w9WgXcQ или https://youtu.be/dQw4w9WgXcQ">
-                    <small style="color: var(--text-gray); margin-top: 0.5rem; display: block;">
-                        Можно ввести ID видео или полную ссылку на YouTube
-                    </small>
+                    <input type="text" id="productVideo" placeholder="dQw4w9WgXcQ или 
                 </div>
                 
-                <!-- 🔥 Секция для скидки -->
                 <div class="form-group">
                     <label>
                         <input type="checkbox" id="isHotPrice">
@@ -1893,14 +2199,13 @@
                 </div>
                 <div class="form-group">
                     <label for="addHotPriceReason">Причина скидки</label>
-                    <input type="text" id="addHotPriceReason" placeholder="Например: Акция недели, Распродажа остатков" style="width: 100%;">
+                    <input type="text" id="addHotPriceReason" placeholder="Например: Акция недели, Распродажа остатков">
                 </div>
                 <button class="submit-btn" id="addToHotPricesBtn">
                     <i class="fas fa-fire"></i> Добавить в скидки
                 </button>
             </div>
             
-            <!-- Список товаров со скидками -->
             <div class="brand-management" style="margin-top: 2rem;">
                 <h4><i class="fas fa-list"></i> Товары со скидками</h4>
                 <div id="hotPricesListContainer">
@@ -1913,7 +2218,6 @@
         <div class="admin-section" id="manageBrandsSection">
             <h3><i class="fas fa-tags"></i> Управление брендами</h3>
             
-            <!-- Форма добавления/редактирования бренда -->
             <div class="brand-management">
                 <h4><i class="fas fa-plus-circle"></i> Добавить/редактировать бренд</h4>
                 <form id="brandForm">
@@ -1924,9 +2228,6 @@
                     <div class="form-group">
                         <label for="brandIconUrl">URL иконки бренда *</label>
                         <input type="text" id="brandIconUrl" required placeholder="https://example.com/razer-logo.png">
-                        <small style="color: var(--text-gray); margin-top: 0.5rem; display: block;">
-                            Ссылка на логотип бренда (рекомендуется размер 100x100px)
-                        </small>
                     </div>
                     <div class="form-group">
                         <div class="image-preview" id="brandIconPreview" style="display: none;">
@@ -1947,28 +2248,35 @@
                 </form>
             </div>
             
-            <!-- Список существующих брендов -->
             <div class="brand-management" style="margin-top: 2rem;">
                 <h4><i class="fas fa-list"></i> Существующие бренды</h4>
                 <div id="brandsListContainer">
                     <!-- Список брендов будет загружен здесь -->
                 </div>
             </div>
+        </div>
+        
+        <!-- 💬 Секция управления комментариями -->
+        <div class="admin-section" id="manageCommentsSection">
+            <h3><i class="fas fa-comments"></i> Управление комментариями</h3>
             
-            <!-- Назначение брендов старым товарам -->
+            <div class="brand-management">
+                <h4><i class="fas fa-list"></i> Все комментарии</h4>
+                <div id="allCommentsList">
+                    <!-- Комментарии будут загружены здесь -->
+                </div>
+            </div>
+            
             <div class="brand-management" style="margin-top: 2rem;">
-                <h4><i class="fas fa-history"></i> Назначить бренды старым товарам</h4>
-                <p style="color: var(--text-gray); margin-bottom: 1rem;">
-                    Здесь вы можете назначить бренды товарам, которые были добавлены до введения системы брендов.
-                </p>
-                <div id="productsWithoutBrand">
-                    <!-- Товары без брендов будут загружены здесь -->
+                <h4><i class="fas fa-clock"></i> Ожидающие проверки</h4>
+                <div id="pendingCommentsList">
+                    <!-- Ожидающие комментарии будут здесь -->
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 🔍 Модальное окно деталей товара -->
+    <!-- 🔍 Модальное окно деталей товара с комментариями -->
     <div class="modal product-detail-modal" id="productDetailModal">
         <div class="modal-content product-detail-content">
             <button class="close-modal" id="closeProductModal">&times;</button>
@@ -2037,10 +2345,9 @@
                 
                 <div class="form-group">
                     <label for="editProductVideo">YouTube видео (ID или ссылка)</label>
-                    <input type="text" id="editProductVideo" placeholder="dQw4w9WgXcQ или https://youtu.be/dQw4w9WgXcQ">
+                    <input type="text" id="editProductVideo">
                 </div>
                 
-                <!-- 🔥 Секция для скидки при редактировании -->
                 <div class="form-group">
                     <label>
                         <input type="checkbox" id="editIsHotPrice">
@@ -2050,7 +2357,7 @@
                     <div id="editHotPriceFields" style="display: none; margin-top: 1rem; padding: 1rem; background: rgba(255, 107, 0, 0.1); border-radius: 10px;">
                         <div class="form-group">
                             <label for="editHotPriceReason">Причина скидки</label>
-                            <input type="text" id="editHotPriceReason" placeholder="Например: Акция недели, Распродажа остатков">
+                            <input type="text" id="editHotPriceReason">
                         </div>
                     </div>
                 </div>
@@ -2098,7 +2405,7 @@
     <script type="module">
         // 🔥 Импортируем Firebase
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
-        import { getDatabase, ref, onValue, set, remove, update } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
+        import { getDatabase, ref, onValue, set, remove, update, push } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
 
         // 🎯 Конфигурация Firebase
         const firebaseConfig = {
@@ -2124,8 +2431,10 @@
         let brands = {};
         let editingBrandId = null;
         let editingProductId = null;
+        let comments = {};
+        let currentProductIdForComments = null;
 
-        // 🏷️ Бренды по умолчанию с иконками
+        // 🏷️ Бренды по умолчанию
         const defaultBrands = {
             'RAZER': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Razer_snake_logo.svg/640px-Razer_snake_logo.svg.png',
             'HyperX': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/HyperX_logo.svg/640px-HyperX_logo.svg.png',
@@ -2143,7 +2452,7 @@
             'LENOVA': 'https://via.placeholder.com/100x100/3b82f6/ffffff?text=LENOVA'
         };
 
-        // 🔧 Функция для извлечения YouTube ID из любой ссылки
+        // 🔧 Функция для извлечения YouTube ID
         function getYouTubeId(url) {
             if (!url || url.trim() === '') return null;
             
@@ -2190,13 +2499,6 @@
                 applyFilters();
                 showYouTubeNotification();
                 updateHotPricesSelect();
-            }, (error) => {
-                console.error('❌ Ошибка загрузки товаров:', error);
-                products = getDefaultProducts();
-                updateCategoryCounts();
-                applyFilters();
-                showYouTubeNotification();
-                updateHotPricesSelect();
             });
 
             // Загружаем скидки
@@ -2208,13 +2510,7 @@
                     console.log('✅ Скидки загружены:', Object.keys(hotPrices).length);
                 } else {
                     hotPrices = {};
-                    console.log('📝 Скидок нет, создаем пустой объект');
                 }
-                renderHotPrices();
-                renderHotPricesList();
-            }, (error) => {
-                console.error('❌ Ошибка загрузки скидок:', error);
-                hotPrices = {};
                 renderHotPrices();
                 renderHotPricesList();
             });
@@ -2227,7 +2523,6 @@
                     brands = data;
                     console.log('✅ Бренды загружены:', Object.keys(brands).length);
                 } else {
-                    // Если брендов нет, создаем из дефолтных
                     brands = {};
                     Object.entries(defaultBrands).forEach(([name, icon]) => {
                         brands[name] = { name, icon, id: name };
@@ -2237,12 +2532,27 @@
                 renderBrands();
                 updateBrandFilters();
                 renderBrandsList();
-            }, (error) => {
-                console.error('❌ Ошибка загрузки брендов:', error);
-                brands = defaultBrands;
-                renderBrands();
-                updateBrandFilters();
-                renderBrandsList();
+            });
+
+            // Загружаем комментарии
+            const commentsRef = ref(database, 'comments');
+            onValue(commentsRef, (snapshot) => {
+                const data = snapshot.val();
+                if (data) {
+                    comments = data;
+                    console.log('✅ Комментарии загружены:', Object.keys(comments).length);
+                } else {
+                    comments = {};
+                }
+                // Если открыто модальное окно товара, обновляем комментарии
+                if (currentProductIdForComments) {
+                    renderProductComments(currentProductIdForComments);
+                }
+                // Если открыта админка комментариев, обновляем
+                if (document.getElementById('manageCommentsSection').style.display === 'block') {
+                    renderAllComments();
+                    renderPendingComments();
+                }
             });
         }
 
@@ -2254,7 +2564,6 @@
             if (hasVideos && notification) {
                 notification.style.display = 'flex';
                 
-                // Автоматически скрыть через 10 секунд
                 setTimeout(() => {
                     notification.style.display = 'none';
                 }, 10000);
@@ -2287,31 +2596,33 @@
             }
         }
 
-        // 🔥 Отрисовка скидочных товаров
+        // 🔥 Отрисовка скидочных товаров - ИСПРАВЛЕННАЯ ВЕРСИЯ
         function renderHotPrices() {
             const grid = document.getElementById('hotPricesGrid');
             if (!grid) return;
             
             grid.innerHTML = '';
             
-            const hotPriceProducts = Object.keys(hotPrices)
-                .map(productId => {
-                    const product = products.find(p => p.id == productId);
-                    if (!product) return null;
-                    
-                    return {
+            // Получаем только те товары, которые есть в hotPrices
+            const hotPriceProducts = [];
+            
+            // Проходим по всем товарам со скидками
+            Object.keys(hotPrices).forEach(productId => {
+                const product = products.find(p => p.id == productId);
+                if (product) {
+                    hotPriceProducts.push({
                         ...product,
                         hotPriceInfo: hotPrices[productId]
-                    };
-                })
-                .filter(p => p !== null);
+                    });
+                }
+            });
             
             if (hotPriceProducts.length === 0) {
                 grid.innerHTML = `
                     <div style="text-align: center; padding: 3rem; color: var(--text-gray); grid-column: 1/-1;">
                         <i class="fas fa-fire" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
-                        <h3 style="margin-bottom: 0.5rem;">404</h3>
-                        <p>Разработке</p>
+                        <h3 style="margin-bottom: 0.5rem;">Скоро появятся скидки!</h3>
+                        <p>Следите за обновлениями</p>
                     </div>
                 `;
                 return;
@@ -2324,9 +2635,9 @@
                 card.className = 'hot-price-card fade-in-up';
                 card.innerHTML = `
                    <div class="hot-price-badge hot-pulse">
-    <i class="fas fa-fire"></i>
-    СКИДКА
-</div>
+                        <i class="fas fa-fire"></i>
+                        СКИДКА
+                    </div>
                     
                     ${document.getElementById('adminPanel').style.display === 'block' ? `
                     <div class="admin-hot-badge" onclick="event.stopPropagation(); openEditHotPriceModal(${product.id})" title="Редактировать скидку">
@@ -2357,17 +2668,7 @@
                             <span class="new-price">${product.price}</span>
                             <span class="discount-percent">АКЦИЯ</span>
                         </div>
-                        
-                        <div class="hot-price-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="rating-value">4.5/5</span>
-                        </div>
+                
                         
                         <div style="margin-top: auto; padding: 0.8rem; background: rgba(255, 107, 0, 0.1); border-radius: 10px; text-align: center; font-size: 0.9rem; color: #ff6b00; font-weight: 600;">
                             <i class="fas fa-bolt"></i>
@@ -2499,7 +2800,7 @@
             });
             brandsGrid.appendChild(allBrandCard);
             
-            // Карточки брендов (отсортированы по алфавиту)
+            // Карточки брендов
             Object.values(brands).sort((a, b) => a.name.localeCompare(b.name)).forEach(brand => {
                 const brandCard = document.createElement('div');
                 brandCard.className = `brand-card ${activeBrand === brand.name ? 'active' : ''}`;
@@ -2673,11 +2974,6 @@
             }
         }
 
-        // 💰 Форматирование цены
-        function formatPrice(price) {
-            return price.toLocaleString('ru-RU') + '$';
-        }
-
         // 📦 Товары по умолчанию
         function getDefaultProducts() {
             return [
@@ -2707,84 +3003,6 @@
                     description: "Механическая клавиатура с RGB подсветкой и переключателями Blue.",
                     video: "dQw4w9WgXcQ",
                     features: ["Механические переключатели", "RGB подсветка", "87 клавиш", "Алюминиевый корпус"]
-                },
-                {
-                    id: 3,
-                    name: "Наушники AJAZZ AC300",
-                    category: "наушники",
-                    brand: "AJAZZ",
-                    price: "399,000 UZS",
-                    images: [
-                        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                    ],
-                    description: "Беспроводные наушники с активным шумоподавлением.",
-                    video: "",
-                    features: ["Bluetooth 5.0", "Активное шумоподавление", "30 часов работы", "Сенсорное управление"]
-                },
-                {
-                    id: 4,
-                    name: "Монитор Samsung Odyssey G5",
-                    category: "монитор",
-                    brand: "Samsung",
-                    price: "3,299,000 UZS",
-                    images: [
-                        "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                    ],
-                    description: "Игровой монитор 27 дюймов с разрешением QHD и частотой 144Hz.",
-                    video: "",
-                    features: ["27 дюймов", "QHD 2560x1440", "144Hz", "1ms отклик", "Изогнутый экран"]
-                },
-                {
-                    id: 5,
-                    name: "Игровое кресло AULA F11",
-                    category: "кресло",
-                    brand: "AULA",
-                    price: "1,899,000 UZS",
-                    images: [
-                        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                    ],
-                    description: "Эргономичное игровое кресло с поддержкой поясницы и подголовником.",
-                    video: "",
-                    features: ["Эргономичный дизайн", "Регулируемая высота", "Поддержка поясницы", "360° вращение"]
-                },
-                {
-                    id: 6,
-                    name: "Игровая мышь Logitech G Pro X Superlight",
-                    category: "мышь",
-                    brand: "Logitech",
-                    price: "999,000 UZS",
-                    images: [
-                        "https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                    ],
-                    description: "Профессиональная беспроводная мышь для киберспорта весом всего 63 грамма.",
-                    video: "",
-                    features: ["Вес 63г", "Hero 25K сенсор", "Беспроводная", "70 часов работы"]
-                },
-                {
-                    id: 7,
-                    name: "Клавиатура VGN V98 Pro",
-                    category: "клавиатура",
-                    brand: "VGN",
-                    price: "699,000 UZS",
-                    images: [
-                        "https://images.unsplash.com/photo-1540932239986-30128078f3c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                    ],
-                    description: "Механическая клавиатура с горячей заменой свитчей и RGB подсветкой.",
-                    video: "",
-                    features: ["Hot-swap свитчи", "RGB подсветка", "98 клавиш", "Алюминиевый корпус"]
-                },
-                {
-                    id: 8,
-                    name: "Наушники HyperX Cloud II",
-                    category: "наушники",
-                    brand: "HyperX",
-                    price: "599,000 UZS",
-                    images: [
-                        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                    ],
-                    description: "Игровые наушники с виртуальным 7.1 surround звуком и шумоподавлением.",
-                    video: "",
-                    features: ["7.1 surround звук", "Съемный микрофон", "Алюминиевая рама", "Память пены"]
                 }
             ];
         }
@@ -2856,7 +3074,7 @@
             countElement.textContent = `Найдено товаров: ${filteredProducts.length}`;
         }
 
-        // 🎨 Исправленная отрисовка товаров
+        // 🎨 Отрисовка товаров
         function renderProducts() {
             const grid = document.getElementById('productsGrid');
             if (!grid) return;
@@ -2892,21 +3110,11 @@
                             <span style="color: var(--text-gray); font-size: 0.9rem;">${getCategoryName(product.category)}</span>
                         </div>
                         <p class="product-description-short">${shortDescription}</p>
-                        <div class="product-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="rating-value">4.5/5</span>
-                        </div>
                         <p class="product-price">${product.price}</p>
                     </div>
                 `;
                 
-                card.addEventListener('click',) () => opencard.addEventListener('click', () => openProductDetail(product));
+                card.addEventListener('click', () => openProductDetail(product));
                 grid.appendChild(card);
             });
         }
@@ -2924,14 +3132,14 @@
             return categories[categoryKey] || categoryKey;
         }
 
-        // 🔍 Открытие деталей товара
+        // 🔍 Открытие деталей товара с комментариями
         function openProductDetail(product) {
             currentImageIndex = 0;
+            currentProductIdForComments = product.id;
             
             const modal = document.getElementById('productDetailModal');
             const content = document.getElementById('productDetailContent');
             
-            // Проверяем, есть ли товар в скидках
             const hotPriceInfo = hotPrices[product.id];
             
             // Формируем HTML для модального окна
@@ -2991,17 +3199,6 @@
                         
                         <p class="product-price" style="font-size: 2.5rem; margin-bottom: 2rem;">${product.price}</p>
                         
-                        <div class="product-rating" style="margin-bottom: 2rem;">
-                            <div class="stars" style="font-size: 1.3rem;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="rating-value" style="font-size: 1.1rem;">4.5/5 (128 отзывов)</span>
-                        </div>
-                        
                         <div class="product-description-full">
                             <h3 style="margin-bottom: 1rem; color: var(--text-light);">Описание</h3>
                             <p>${product.description}</p>
@@ -3026,7 +3223,7 @@
                     html += `
                         <div class="video-container">
                             <h3><i class="fab fa-youtube" style="color: #ff0000;"></i> Видео-обзор</h3>
-                            <iframe src="https://www.youtube.com/embed/${videoId}" 
+                            <iframe src=" 
                                     title="YouTube video player" 
                                     frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -3037,12 +3234,315 @@
                 }
             }
             
+            // Добавляем секцию комментариев
+            html += `
+                <div class="comments-section" id="productCommentsSection">
+                    <h3 class="comments-title">
+                        <i class="fas fa-comments"></i> Отзывы покупателей
+                    </h3>
+                    
+                    <div class="comment-form">
+                        <h4>Оставить отзыв</h4>
+                        <form id="addCommentForm">
+                            <input type="hidden" id="commentProductId" value="${product.id}">
+                            <div class="comment-input-group">
+                                <label for="commentAuthor">Ваше имя *</label>
+                                <input type="text" id="commentAuthor" class="comment-input" required placeholder="Как вас зовут?">
+                            </div>
+                            <div class="comment-input-group">
+                                <label for="commentText">Ваш отзыв *</label>
+                                <textarea id="commentText" class="comment-textarea" required placeholder="Поделитесь вашим мнением о товаре..."></textarea>
+                            </div>
+                            <button type="submit" class="comment-submit-btn">
+                                <i class="fas fa-paper-plane"></i> Отправить отзыв
+                            </button>
+                        </form>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 1rem;">
+                            <i class="fas fa-info-circle"></i> Ваш отзыв будет опубликован после проверки администратором.
+                        </p>
+                    </div>
+                    
+                    <div class="comments-list" id="commentsList">
+                        <!-- Комментарии будут загружены здесь -->
+                    </div>
+                </div>
+            `;
+            
             content.innerHTML = html;
             modal.style.display = 'block';
             
             // Обновляем глобальную переменную с изображениями
             window.productImages = product.images || [];
+            
+            // Загружаем комментарии для этого товара
+            renderProductComments(product.id);
+            
+            // Обработчик формы добавления комментария
+            document.getElementById('addCommentForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const author = document.getElementById('commentAuthor').value.trim();
+                const text = document.getElementById('commentText').value.trim();
+                const productId = document.getElementById('commentProductId').value;
+                
+                if (!author || !text) {
+                    alert('❌ Заполните все поля!');
+                    return;
+                }
+                
+                // Создаем новый комментарий
+                const newComment = {
+                    id: Date.now().toString(),
+                    productId: parseInt(productId),
+                    author: author,
+                    text: text,
+                    status: 'pending', // pending, approved, rejected
+                    date: new Date().toISOString()
+                };
+                
+                // Сохраняем в Firebase
+                try {
+                    const commentsRef = ref(database, 'comments/' + newComment.id);
+                    await set(commentsRef, newComment);
+                    
+                    // Очищаем форму
+                    document.getElementById('commentAuthor').value = '';
+                    document.getElementById('commentText').value = '';
+                    
+                    // Показываем сообщение
+                    alert('✅ Ваш отзыв отправлен на проверку! Администратор скоро проверит его.');
+                    
+                    // Обновляем список комментариев
+                    renderProductComments(productId);
+                    
+                } catch (error) {
+                    console.error('❌ Ошибка сохранения комментария:', error);
+                    alert('❌ Ошибка при отправке отзыва');
+                }
+            });
         }
+
+        // 💬 Отрисовка комментариев для товара
+        function renderProductComments(productId) {
+            const commentsList = document.getElementById('commentsList');
+            if (!commentsList) return;
+            
+            // Фильтруем комментарии для этого товара
+            const productComments = Object.values(comments).filter(comment => 
+                comment.productId == productId && comment.status === 'approved'
+            );
+            
+            if (productComments.length === 0) {
+                commentsList.innerHTML = `
+                    <div class="no-comments">
+                        <i class="fas fa-comment-slash" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                        <p>Пока нет отзывов. Будьте первым!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Сортируем по дате (новые сначала)
+            productComments.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            let html = '';
+            productComments.forEach(comment => {
+                const date = new Date(comment.date).toLocaleDateString('ru-RU', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+                
+                html += `
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <div class="comment-author">${comment.author}</div>
+                            <div class="comment-date">${date}</div>
+                        </div>
+                        <div class="comment-text">${comment.text}</div>
+                    </div>
+                `;
+            });
+            
+            commentsList.innerHTML = html;
+        }
+
+        // 📋 Отрисовка всех комментариев в админке
+        function renderAllComments() {
+            const container = document.getElementById('allCommentsList');
+            if (!container) return;
+            
+            if (Object.keys(comments).length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--text-gray); padding: 2rem;">Нет комментариев</p>';
+                return;
+            }
+            
+            // Сортируем комментарии по дате (новые сначала)
+            const sortedComments = Object.values(comments).sort((a, b) => 
+                new Date(b.date) - new Date(a.date)
+            );
+            
+            let html = '';
+            sortedComments.forEach(comment => {
+                const product = products.find(p => p.id == comment.productId);
+                const date = new Date(comment.date).toLocaleDateString('ru-RU', {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                const statusClass = `comment-status ${comment.status}`;
+                const statusText = comment.status === 'pending' ? 'Ожидает' : 
+                                  comment.status === 'approved' ? 'Одобрен' : 'Отклонен';
+                
+                html += `
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <div class="comment-author">${comment.author}</div>
+                            <div class="comment-date">${date}</div>
+                        </div>
+                        <div class="comment-text">${comment.text}</div>
+                        <div style="margin-top: 0.5rem;">
+                            <span class="${statusClass}">${statusText}</span>
+                            <span style="color: var(--text-gray); margin-left: 1rem;">
+                                Товар: ${product ? product.name : 'Не найден'}
+                            </span>
+                        </div>
+                        ${comment.status === 'pending' ? `
+                        <div class="comment-actions">
+                            <button class="comment-action-btn comment-approve-btn" onclick="updateCommentStatus('${comment.id}', 'approved')">
+                                <i class="fas fa-check"></i> Одобрить
+                            </button>
+                            <button class="comment-action-btn comment-reject-btn" onclick="updateCommentStatus('${comment.id}', 'rejected')">
+                                <i class="fas fa-times"></i> Отклонить
+                            </button>
+                            <button class="comment-action-btn comment-delete-btn" onclick="deleteComment('${comment.id}')">
+                                <i class="fas fa-trash"></i> Удалить
+                            </button>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // ⏳ Отрисовка ожидающих комментариев
+        function renderPendingComments() {
+            const container = document.getElementById('pendingCommentsList');
+            if (!container) return;
+            
+            const pendingComments = Object.values(comments).filter(comment => 
+                comment.status === 'pending'
+            );
+            
+            if (pendingComments.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--text-gray); padding: 2rem;">Нет комментариев для проверки</p>';
+                return;
+            }
+            
+            // Сортируем по дате (старые сначала)
+            pendingComments.sort((a, b) => new Date(a.date) - new Date(b.date));
+            
+            let html = '';
+            pendingComments.forEach(comment => {
+                const product = products.find(p => p.id == comment.productId);
+                const date = new Date(comment.date).toLocaleDateString('ru-RU', {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                html += `
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <div class="comment-author">${comment.author}</div>
+                            <div class="comment-date">${date}</div>
+                        </div>
+                        <div class="comment-text">${comment.text}</div>
+                        <div style="margin-top: 0.5rem; color: var(--text-gray);">
+                            Товар: ${product ? product.name : 'Не найден'}
+                        </div>
+                        <div class="comment-actions">
+                            <button class="comment-action-btn comment-approve-btn" onclick="updateCommentStatus('${comment.id}', 'approved')">
+                                <i class="fas fa-check"></i> Одобрить
+                            </button>
+                            <button class="comment-action-btn comment-reject-btn" onclick="updateCommentStatus('${comment.id}', 'rejected')">
+                                <i class="fas fa-times"></i> Отклонить
+                            </button>
+                            <button class="comment-action-btn comment-delete-btn" onclick="deleteComment('${comment.id}')">
+                                <i class="fas fa-trash"></i> Удалить
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // 🔄 Обновление статуса комментария
+        window.updateCommentStatus = async function(commentId, status) {
+            try {
+                const commentRef = ref(database, 'comments/' + commentId);
+                await update(commentRef, { status: status });
+                
+                // Обновляем локальный массив
+                if (comments[commentId]) {
+                    comments[commentId].status = status;
+                }
+                
+                // Обновляем интерфейс
+                renderAllComments();
+                renderPendingComments();
+                
+                // Если открыт товар с комментариями, обновляем
+                if (currentProductIdForComments) {
+                    renderProductComments(currentProductIdForComments);
+                }
+                
+                console.log(`✅ Статус комментария обновлен на: ${status}`);
+                
+            } catch (error) {
+                console.error('❌ Ошибка обновления статуса:', error);
+                alert('❌ Ошибка при обновлении статуса комментария');
+            }
+        };
+
+        // 🗑️ Удаление комментария
+        window.deleteComment = async function(commentId) {
+            if (!confirm('❌ Вы уверены, что хотите удалить этот комментарий?')) {
+                return;
+            }
+            
+            try {
+                const commentRef = ref(database, 'comments/' + commentId);
+                await remove(commentRef);
+                
+                // Удаляем из локального массива
+                delete comments[commentId];
+                
+                // Обновляем интерфейс
+                renderAllComments();
+                renderPendingComments();
+                
+                // Если открыт товар с комментариями, обновляем
+                if (currentProductIdForComments) {
+                    renderProductComments(currentProductIdForComments);
+                }
+                
+                console.log('✅ Комментарий удален');
+                
+            } catch (error) {
+                console.error('❌ Ошибка удаления комментария:', error);
+                alert('❌ Ошибка при удалении комментария');
+            }
+        };
 
         // 🖼️ Функции для навигации по галерее
         window.changeImage = function(index) {
@@ -3095,7 +3595,7 @@
 
         // 🗑️ Удаление бренда
         async function deleteBrand(brandName) {
-            if (!confirm(`❌ Вы уверены, что хотите удалить бренд "${brandName}"? Это не удалит товары этого бренда.`)) {
+            if (!confirm(`❌ Вы уверены, что хотите удалить бренд "${brandName}"?`)) {
                 return;
             }
             
@@ -3128,6 +3628,7 @@
             
             document.getElementById('closeProductModal').addEventListener('click', () => {
                 document.getElementById('productDetailModal').style.display = 'none';
+                currentProductIdForComments = null;
             });
             
             document.getElementById('closeEditModal').addEventListener('click', () => {
@@ -3146,7 +3647,10 @@
                 const editHotPriceModal = document.getElementById('editHotPriceModal');
                 
                 if (e.target === adminModal) adminModal.style.display = 'none';
-                if (e.target === productModal) productModal.style.display = 'none';
+                if (e.target === productModal) {
+                    productModal.style.display = 'none';
+                    currentProductIdForComments = null;
+                }
                 if (e.target === editModal) editModal.style.display = 'none';
                 if (e.target === editHotPriceModal) editHotPriceModal.style.display = 'none';
             });
@@ -3169,10 +3673,10 @@
                     document.getElementById('adminPanel').style.display = 'block';
                     
                     // Показываем секцию управления товарами по умолчанию
-                    document.getElementById('addProductSection').style.display = 'none';
+                    document.querySelectorAll('.admin-section').forEach(section => {
+                        section.style.display = 'none';
+                    });
                     document.getElementById('manageProductsSection').style.display = 'block';
-                    document.getElementById('manageHotPricesSection').style.display = 'none';
-                    document.getElementById('manageBrandsSection').style.display = 'none';
                     
                     renderAdminProductsList();
                     
@@ -3222,7 +3726,15 @@
                 });
                 document.getElementById('manageBrandsSection').style.display = 'block';
                 renderBrandsList();
-                renderProductsWithoutBrand();
+            });
+            
+            document.getElementById('manageCommentsBtn').addEventListener('click', () => {
+                document.querySelectorAll('.admin-section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                document.getElementById('manageCommentsSection').style.display = 'block';
+                renderAllComments();
+                renderPendingComments();
             });
             
             // 📤 Экспорт данных в JSON
@@ -3230,7 +3742,8 @@
                 const data = {
                     products: products,
                     hotPrices: hotPrices,
-                    brands: brands
+                    brands: brands,
+                    comments: comments
                 };
                 
                 const dataStr = JSON.stringify(data, null, 2);
@@ -3289,7 +3802,7 @@
                     return;
                 }
                 
-                // Генерируем ID (максимальный существующий + 1)
+                // Генерируем ID
                 const maxId = products.length > 0 ? Math.max(...products.map(p => p.id)) : 0;
                 const newId = maxId + 1;
                 
@@ -3477,78 +3990,6 @@
                 editingBrandId = null;
             });
             
-            // 📋 Отрисовка товаров без брендов
-            function renderProductsWithoutBrand() {
-                const container = document.getElementById('productsWithoutBrand');
-                if (!container) return;
-                
-                const productsWithoutBrand = products.filter(p => !p.brand || p.brand.trim() === '');
-                
-                if (productsWithoutBrand.length === 0) {
-                    container.innerHTML = '<p style="text-align: center; color: var(--text-gray); padding: 1rem;">Все товары имеют бренды!</p>';
-                    return;
-                }
-                
-                let html = '<div class="brands-list">';
-                
-                productsWithoutBrand.forEach(product => {
-                    html += `
-                        <div class="brand-item">
-                            <img src="${product.images && product.images.length > 0 ? product.images[0] : 'https://via.placeholder.com/60x60?text=Нет+фото'}" 
-                                 style="width: 60px; height: 60px; object-fit: contain; border-radius: 8px; padding: 0;">
-                            <div class="brand-info">
-                                <span>${product.name}</span>
-                                <small>${product.price} • ${getCategoryName(product.category)}</small>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <select class="filter-select" style="font-size: 0.9rem; padding: 0.5rem;" onchange="assignBrandToProduct(${product.id}, this.value)">
-                                    <option value="">Выберите бренд</option>
-                                    ${Object.values(brands).sort((a, b) => a.name.localeCompare(b.name)).map(brand => `
-                                        <option value="${brand.name}">${brand.name}</option>
-                                    `).join('')}
-                                </select>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                html += '</div>';
-                container.innerHTML = html;
-            }
-            
-            // 🏷️ Назначение бренда товару
-            window.assignBrandToProduct = async function(productId, brandName) {
-                const product = products.find(p => p.id == productId);
-                if (!product || !brandName) return;
-                
-                product.brand = brandName;
-                
-                const success = await updateProduct(productId, { brand: brandName });
-                if (success) {
-                    applyFilters();
-                    renderAdminProductsList();
-                    renderProductsWithoutBrand();
-                    
-                    // Находим элемент и показываем сообщение
-                    const item = document.querySelector(`select[onchange*="${productId}"]`).closest('.brand-item');
-                    if (item) {
-                        const oldHtml = item.innerHTML;
-                        item.innerHTML = `
-                            <div style="text-align: center; padding: 1rem; width: 100%; color: var(--accent-teal);">
-                                <i class="fas fa-check-circle"></i> Бренд "${brandName}" назначен!
-                            </div>
-                        `;
-                        
-                        setTimeout(() => {
-                            item.style.opacity = '0.5';
-                            setTimeout(() => item.remove(), 500);
-                        }, 1500);
-                    }
-                } else {
-                    alert('❌ Ошибка при назначении бренда');
-                }
-            };
-            
             // 🔥 Добавление товара в скидки
             document.getElementById('addToHotPricesBtn').addEventListener('click', async function() {
                 const productId = document.getElementById('selectProductForHotPrice').value;
@@ -3728,15 +4169,6 @@
                     brandSelect.appendChild(option);
                 });
                 
-                // Если бренда нет в списке, добавляем его
-                if (product.brand && !Object.values(brands).some(b => b.name === product.brand)) {
-                    const option = document.createElement('option');
-                    option.value = product.brand;
-                    option.textContent = product.brand;
-                    option.selected = true;
-                    brandSelect.appendChild(option);
-                }
-                
                 // Заполняем характеристики
                 const featuresContainer = document.getElementById('editFeaturesInputsContainer');
                 featuresContainer.innerHTML = '';
@@ -3756,19 +4188,6 @@
                         `;
                         featuresContainer.appendChild(featureGroup);
                     });
-                } else {
-                    const featureGroup = document.createElement('div');
-                    featureGroup.className = 'feature-input-group';
-                    featureGroup.style.marginBottom = '0.5rem';
-                    featureGroup.innerHTML = `
-                        <div style="display: flex; gap: 0.5rem;">
-                            <input type="text" class="feature-input" placeholder="Например: Сенсор 20K DPI" style="flex: 1;">
-                            <button type="button" class="remove-image-btn" onclick="this.parentElement.parentElement.remove()">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    `;
-                    featuresContainer.appendChild(featureGroup);
                 }
                 
                 // Заполняем изображения
@@ -3789,18 +4208,6 @@
                         `;
                         imagesContainer.appendChild(imageGroup);
                     });
-                } else {
-                    const imageGroup = document.createElement('div');
-                    imageGroup.className = 'image-input-group';
-                    imageGroup.innerHTML = `
-                        <div class="image-input-wrapper">
-                            <input type="text" class="image-url-input" required placeholder="https://example.com/photo1.jpg">
-                            <button type="button" class="remove-image-btn" onclick="this.parentElement.parentElement.remove()">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    `;
-                    imagesContainer.appendChild(imageGroup);
                 }
                 
                 // Проверяем скидку
@@ -3943,7 +4350,7 @@
             
             // 🗑️ Удаление товара
             window.deleteProduct = async function(productId) {
-                if (!confirm('❌ Вы уверены, что хотите удалить этот товар? Это действие нельзя отменить!')) {
+                if (!confirm('❌ Вы уверены, что хотите удалить этот товар?')) {
                     return;
                 }
                 
@@ -4073,5 +4480,7 @@
             console.log('🚀 GG Point загружен и готов к работе!');
         });
     </script>
+
 </body>
 </html>
+
