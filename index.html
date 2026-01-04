@@ -6,6 +6,31 @@
     <title>GG Point — каталог товаров</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Стили для специальных кнопок */
+.special-btn {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.special-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+}
+
+.special-btn i {
+    font-size: 1rem;
+}
         * {
             margin: 0;
             padding: 0;
@@ -1848,20 +1873,22 @@
     <header>
         <div class="header-container">
             <div class="logo">GGPOINT</div>
-            <<!-- В хедере найдите навигацию и добавьте: -->
-<nav>
-    <ul>
-        <li><a href="#home">Главная</a></li>
-        <li><a href="#hot-prices">Скидки</a></li>
-        <li><a href="#categories">Категории</a></li>
-        <li><a href="#brands">Бренды</a></li>
-        <li><a href="#products">Периферия</a></li>
-        <!-- Добавьте эту строку: -->
-        <li><a href="keycaps.html" target="_blank" class="keycaps-link">
-            <i class="fas fa-keyboard"></i> Кейкапы
-        <li><a href="#contacts">Контакты</a></li>
-    </ul>
-</nav>
+            <nav>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#hot-prices">Скидки</a></li>
+                    <li><a href="#categories">Категории</a></li>
+                    <li><a href="#brands">Бренды</a></li>
+                    <li><a href="#products">Товары</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+<button class="special-btn" onclick="window.location.href='keycaps.html'">
+    <i class="fas fa-keyboard"></i> Кейкапы
+</button>
+<button class="special-btn" onclick="window.location.href='mats.html'">
+    <i class="fas fa-border-all"></i> Коврики
+</button>
+                </ul>
+            </nav>
             <button class="admin-btn" id="adminBtn">
                 <i class="fas fa-cog"></i> Admin
             </button>
@@ -1923,8 +1950,29 @@
                 </div>
                 <div class="category-name">Наушники</div>
                 <div class="category-count" id="headphonesCount">0 товаров</div>
+
+                <!-- После существующих категорий добавьте -->
+<div class="categories-grid">
+    <!-- ... существующие категории ... -->
+    
+    <div class="category-card" onclick="window.location.href='keycaps.html'">
+        <div class="category-icon">
+            <i class="fas fa-keyboard"></i>
+        </div>
+        <div class="category-name">Кейкапы</div>
+        <div class="category-count">Отдельная страница</div>
+    </div>
+    
+    <div class="category-card" onclick="window.location.href='mats.html'">
+        <div class="category-icon">
+            <i class="fas fa-border-all"></i>
+        </div>
+        <div class="category-name">Коврики</div>
+        <div class="category-count">Отдельная страница</div>
+    </div>
+</div>
+                
             </div>
-            
         </div>
     </section>
 
@@ -1935,22 +1983,6 @@
             <!-- Бренды будут загружаться здесь -->
         </div>
     </section>
-    <!-- Добавьте где-нибудь на видном месте, например после героя: -->
-<div style="text-align: center; margin: 2rem 0;">
-    <a href="keycaps.html" target="_blank" f
-       style="display: inline-flex; align-items: center; gap: 1rem; 
-              background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%); 
-              color: white; padding: 1.2rem 2.5rem; border-radius: 15px; 
-              text-decoration: none; font-weight: bold; font-size: 1.2rem;
-              box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
-              transition: all 0.3s ease;">
-        <i class="fas fa-external-link-alt"></i>
-        <span>Смотреть все кейкапы</span>
-        <i class="fas fa-arrow-right"></i>
-    </a>
-    <p style="color: var(--text-gray); margin-top: 1rem; font-size: 0.9rem;">
-    </p>
-</div>
 
     <!-- 🎪 Секция товаров -->
     <section class="products" id="products">
@@ -1968,9 +2000,7 @@
                     <option value="монитор">Мониторы</option>
                     <option value="кресло">Кресла</option>
                     <option value="коврик">Коврик</option>
-                    
                 </select>
-
             </div>
             
             <div class="filter-group">
@@ -1986,7 +2016,6 @@
                 <label><i class="fas fa-search"></i> Поиск</label>
                 <input type="text" class="filter-select" id="searchInput" placeholder="Название товара...">
             </div>
-            
 
             <div class="filter-group">
                 <label><i class="fas fa-tag"></i> Бренд</label>
@@ -2003,7 +2032,6 @@
         <div class="video-notification" id="videoNotification" style="display: none;">
             <i class="fab fa-youtube"></i>
             <span>📢 ВНИМАНИЕ: Внизу страницы есть видео-обзор товаров на YouTube!</span>
-            
         </div>
         
         <div class="products-grid" id="productsGrid">
@@ -2153,7 +2181,7 @@
                 
                 <div class="form-group">
                     <label for="productVideo">YouTube видео (ID или ссылка)</label>
-                    <input type="text" id="productVideo" placeholder="dQw4w9WgXcQ или 
+                    <input type="text" id="productVideo" placeholder="dQw4w9WgXcQ или https://youtu.be/dQw4w9WgXcQ">
                 </div>
                 
                 <div class="form-group">
@@ -2306,6 +2334,7 @@
                         <option value="монитор">Монитор</option>
                         <option value="кресло">Кресло</option>
                         <option value="коврик">Коврик</option>
+                        
                     </select>
                 </div>
                 <div class="form-group">
@@ -3223,7 +3252,7 @@
                     html += `
                         <div class="video-container">
                             <h3><i class="fab fa-youtube" style="color: #ff0000;"></i> Видео-обзор</h3>
-                            <iframe src=" 
+                            <iframe src="https://www.youtube.com/embed/${videoId}" 
                                     title="YouTube video player" 
                                     frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -4483,4 +4512,3 @@
 
 </body>
 </html>
-
