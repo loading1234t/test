@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игровые коврики - GG Point</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #2563eb;
+            --primary-dark: #1e40af;
+            --accent-teal: #0d9488;
+            --accent-green: #10b981;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+            --text-gray: #cbd5e1;
+            --gradient: linear-gradient(135deg, #10b981 0%, #0d9488 100%);
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent-green);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #10b981 0%, #0d9488 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            cursor: pointer;
+        }
+
+        .back-btn {
+            background: transparent;
+            border: 2px solid var(--accent-green);
+            color: var(--accent-green);
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-btn:hover {
+            background: var(--accent-green);
+            color: var(--text-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .hero-section {
+            padding: 120px 2rem 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%);
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #10b981 0%, #0d9488 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .mats-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mat-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .mat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-green);
+            box-shadow: 0 20px 50px rgba(16, 185, 129, 0.2);
+        }
+
+        .mat-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .mat-card:hover .mat-image {
+            transform: scale(1.05);
+        }
+
+        .mat-info {
+            padding: 1.5rem;
+        }
+
+        .mat-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .mat-size {
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .mat-price {
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .mat-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .feature-tag {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .size-selector {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .size-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-green);
+            background: transparent;
+            color: var(--accent-green);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .size-btn:hover {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        .coming-soon {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-gray);
+        }
+
+        .coming-soon i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .hero-section {
+                padding: 100px 1rem 2rem;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .mats-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="header-container">
+            <div class="logo" onclick="window.location.href='index.html'">GGPOINT</div>
+            <button class="back-btn" onclick="window.location.href='index.html'">
+                <i class="fas fa-arrow-left"></i> На главную
+            </button>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero-section">
+        <h1>Игровые коврики</h1>
+        <p>Премиальные игровые коврики для максимального комфорта и точности</p>
+    </section>
+
+    <!-- Сетка ковриков -->
+    <div class="mats-grid" id="matsGrid">
+        <!-- Коврики будут загружены здесь -->
+    </div>
+
+    <!-- Если ковриков нет -->
+    <div class="coming-soon" id="comingSoon" style="display: none;">
+        <i class="fas fa-border-all"></i>
+        <h2>Скоро появятся!</h2>
+        <p>Коллекция ковриков в разработке</p>
+    </div>
+
+    <script>
+        // Пример данных ковриков
+        const mats = [
+            {
+                id: 1,
+                name: "SteelSeries QcK Heavy",
+                size: "XL 450×400×6mm",
+                price: "299,000 UZS",
+                image: "https://images.unsplash.com/photo-1591798791865-fa4e8a1e9e8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                features: ["Тканевая поверхность", "Прорезиненная основа", "Антискользящая", "Толщина 6мм"]
+            },
+            {
+                id: 2,
+                name: "Razer Goliathus Extended",
+                size: "XXL 920×294×3mm",
+                price: "399,000 UZS",
+                image: "https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                features: ["Микро-текстурированная", "Контроль сенсора", "Водонепроницаемая", "Хлопиковое переплетение"]
+            },
+            {
+                id: 3,
+                name: "Logitech G840",
+                size: "XXL 900×400×3mm",
+                price: "459,000 UZS",
+                image: "https://images.unsplash.com/photo-1591798792955-6b0468c9f5a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                features: ["Низкое трение", "Высокая точность", "Влагостойкая", "Легко чистится"]
+            },
+            {
+                id: 4,
+                name: "HyperX Fury S Pro",
+                size: "L 450×400×4mm",
+                price: "279,000 UZS",
+                image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                features: ["Стич-края", "Прочная основа", "Быстрое скольжение", "Противоскользящая"]
+            },
+            {
+                id: 5,
+                name: "ASUS ROG Sheath",
+                size: "XXL 900×440×3mm",
+                price: "429,000 UZS",
+                image: "https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+                features: ["Резиновая основа", "Водоотталкивающая", "Сшитые края", "Логотип ROG"]
+            },
+            {
+                id: 6,
+                name: "Corsair MM700",
+                size: "XL 930×400×3mm",
+                price: "389,000 UZS",
+                image: "https://images.unsplash.com/photo-1591798792955-6b0468c9f5a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+                features: ["RGB подсветка", "Микротекстурированная", "USB хабы", "Совместимость с iCUE"]
+            }
+        ];
+
+        // Загрузка ковриков
+        document.addEventListener('DOMContentLoaded', function() {
+            const grid = document.getElementById('matsGrid');
+            const comingSoon = document.getElementById('comingSoon');
+            
+            if (mats.length === 0) {
+                comingSoon.style.display = 'block';
+                grid.style.display = 'none';
+                return;
+            }
+            
+            mats.forEach(mat => {
+                const card = document.createElement('div');
+                card.className = 'mat-card';
+                card.innerHTML = `
+                    <img src="${mat.image}" alt="${mat.name}" class="mat-image">
+                    <div class="mat-info">
+                        <h3 class="mat-title">${mat.name}</h3>
+                        <div class="mat-size">${mat.size}</div>
+                        <div class="mat-price">${mat.price}</div>
+                        <div class="size-selector">
+                            <button class="size-btn">S</button>
+                            <button class="size-btn">M</button>
+                            <button class="size-btn">L</button>
+                            <button class="size-btn">XL</button>
+                        </div>
+                        <div class="mat-features">
+                            ${mat.features.map(feature => 
+                                `<span class="feature-tag">${feature}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>
